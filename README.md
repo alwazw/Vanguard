@@ -5,21 +5,29 @@ The Vanguard Protocol is an ultra-modern, high-fidelity landing page for a holis
 
 ## The Architecture: Why & How
 
-### 1. Next.js 15 (App Router)
-- **Why:** To leverage the latest performance optimizations, including React Server Components (RSC) and enhanced data fetching. Next.js 15 provides a robust foundation for building high-performance, SEO-friendly web applications.
+### 1. Next.js 16 (App Router)
+- **Why:** To leverage the latest performance optimizations and enhanced data fetching. Next.js provides a robust foundation for building high-performance, SEO-friendly web applications.
 - **How:** Utilizing the App Router for simplified routing and layout management, with 'use client' directives strategically applied only where interactivity (GSAP, R3F) is required.
 
 ### 2. Tailwind CSS v4
 - **Why:** For rapid iteration and a utility-first styling approach that results in minimal production builds. Tailwind v4's new engine offers faster compilation and improved CSS-in-JS capabilities via `@theme` variables.
-- **How:** Defining a custom color palette in `src/app/globals.css` using Neon Lime (#B6FF3B) and Deep Black for a high-contrast, "cyber-industrial" aesthetic.
+- **How:** Defining a custom color palette in `src/app/globals.css` using Neon Lime (#B6FF3B), Deep Black, and Vanguard Blue for a high-contrast, "cyber-industrial" aesthetic.
 
 ### 3. GSAP 3.12 (ScrollTrigger) & Lenis
 - **Why:** GSAP is the industry standard for complex, high-performance animations. Lenis provides smooth, momentum-based scrolling, which is essential for creating a premium feel.
-- **How:** Implementing a `SmoothScroll` component with Lenis and using the `useGSAP` hook for cleanup-safe animations in the `Hero` component.
+- **How:** Implementing a `SmoothScroll` component with Lenis and using the `useGSAP` hook for cleanup-safe animations throughout the application.
 
 ### 4. React Three Fiber (R3F) & @react-three/drei
 - **Why:** To bring physical and network topologies to life in a way that static imagery cannot. R3F allows for complex 3D scenes to be managed using familiar React component patterns.
-- **How:** Creating a `NetworkTopology` component that renders a pulsing, interactive 3D network using points and connecting lines.
+- **How:** Creating immersive 3D backgrounds (`NetworkTopology`) and interactive hardware galleries (`ArsenalGallery`) using custom 3D geometries and shaders.
+
+## Key Modules
+
+### Vanguard Academy
+An interactive, 4-tier training curriculum designed for operational teams and C-suite executives. Each tier focuses on specific security domains, from foundational hygiene to advanced full-spectrum operations.
+
+### ROI Calculator & Metrics
+A dynamic dashboard visualizing the economic impact of security breaches and the potential savings achieved through the Vanguard Protocol. Featuring real-time GSAP counting animations and interactive impact metrics.
 
 ## Deployment Instructions
 
@@ -56,7 +64,8 @@ The Vanguard Protocol is an ultra-modern, high-fidelity landing page for a holis
 4. Click "Deploy".
 
 ## Future Roadmap
-- [ ] Phase 3: Implement Bento Grid for Consulting Pillars with hover-glitch effects.
-- [ ] Phase 3: Build horizontal scroll gallery for 'The Modern Arsenal' hardware.
-- [ ] Phase 4: Build interactive 4-Tier Academy list with animated accordions.
-- [ ] Phase 4: Create ROI calculator/dashboard showing $232k savings.
+- [x] Phase 1: Foundation (Next.js, Tailwind v4, Lenis, GSAP setup).
+- [x] Phase 2: Hero & Visual Narrative (3D topology, custom cursor).
+- [x] Phase 3: Core Service Showcases (Bento Grid, Horizontal Arsenal Gallery).
+- [x] Phase 4: Academy & Conversion (Tiered Academy list, ROI Calculator).
+- [ ] Final Mobile Optimization and performance audit (Lighthouse 95+).

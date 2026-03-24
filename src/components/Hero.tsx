@@ -13,10 +13,7 @@ export default function Hero() {
   useGSAP(() => {
     const tl = gsap.timeline({ defaults: { ease: 'power4.out' } })
 
-    // Split text for stagger effect
-    const words = titleRef.current.innerText.split(' ')
-    titleRef.current.innerHTML = words.map(word => `<span class="inline-block">${word}</span>`).join(' ')
-    const spans = titleRef.current.querySelectorAll('span')
+    const spans = titleRef.current.querySelectorAll('.word-span')
 
     tl.from(spans, {
       y: 100,
@@ -47,7 +44,11 @@ export default function Hero() {
           ref={titleRef}
           className="text-6xl md:text-8xl lg:text-9xl font-bold uppercase tracking-tight leading-none mb-6 flex flex-wrap justify-center gap-x-4"
         >
-          The <span className="text-neon-lime">Vanguard</span> Protocol
+          {"The Vanguard Protocol".split(" ").map((word, i) => (
+            <span key={i} className={`word-span inline-block ${word === "Vanguard" ? "text-neon-lime" : ""}`}>
+              {word}
+            </span>
+          ))}
         </h1>
         <p
           ref={subtitleRef}
