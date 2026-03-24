@@ -5,17 +5,17 @@ Project Roadmap: The Vanguard Protocol Launch
 ​[x] Configure AGENTS.md and basic folder structure.
 ​[x] Setup Lenis smooth scrolling and GSAP context provider.
 
-​[ ] Phase 2: Hero & Visual Narrative
+​[x] Phase 2: Hero & Visual Narrative
 ​[x] Build 'Explosive' GSAP entry animation.
 ​[x] Implement Three.js 3D background (pulsing network topology).
-​[ ] Create custom hand-graphic cursor.
+​[x] Create custom hand-graphic cursor.
 
-​[ ] Phase 3: Core Service Showcases 
-​[ ] Implement Bento Grid for Consulting Pillars with hover-glitch effects. 
-​[ ] Build horizontal scroll gallery for 'The Modern Arsenal' hardware. 
-​[ ] Integrate 3D Flipper Zero and O.MG cable models.
+​[x] Phase 3: Core Service Showcases
+​[x] Implement Bento Grid for Consulting Pillars with hover-glitch effects.
+​[x] Build horizontal scroll gallery for 'The Modern Arsenal' hardware.
+​[x] Integrate 3D Flipper Zero and O.MG cable models.
 
-​[ ] Phase 4: Academy & Conversion
-​[ ] Build interactive 4-Tier Academy list with animated accordions. 
-​[ ] Create ROI calculator/dashboard showing $232k savings.
-​[ ] Mobile optimization and final performance audit (Lighthouse 95+).
+​[x] Phase 4: Academy & Conversion
+​[x] Build interactive 4-Tier Academy list with animated accordions.
+​[x] Create ROI calculator/dashboard showing $232k savings.
+​[x] Mobile optimization and final performance audit (Lighthouse 95+).

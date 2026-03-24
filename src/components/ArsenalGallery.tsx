@@ -1,0 +1,137 @@
+'use client'
+
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useRef } from 'react'
+import { Canvas } from '@react-three/fiber'
+import { MeshDistortMaterial, Sphere, Float, Box, TorusKnot, RoundedBox } from '@react-three/drei'
+
+gsap.registerPlugin(ScrollTrigger)
+
+const arsenalItems = [
+  {
+    id: 1,
+    name: 'Flipper Zero',
+    description: 'A multi-tool for hackers, designed for interacting with digital environments.',
+    color: '#B6FF3B',
+    type: 'flipper'
+  },
+  {
+    id: 2,
+    name: 'O.MG Cable',
+    description: 'A highly advanced USB cable that functions as a covert remote keystroke injector.',
+    color: '#3B7BFF',
+    type: 'cable'
+  },
+  {
+    id: 3,
+    name: 'WiFi Pineapple',
+    description: 'The industry-standard rogue access point for modern-day network penetration.',
+    color: '#FF3B7B',
+    type: 'pineapple'
+  },
+  {
+    id: 4,
+    name: 'Hak5 Suite',
+    description: 'The complete set of advanced penetration testing tools for professional red teams.',
+    color: '#B6FF3B',
+    type: 'suite'
+  },
+]
+
+function DeviceModel({ color, type }: { color: string, type: string }) {
+  return (
+    <Canvas camera={{ position: [0, 0, 4], fov: 60 }}>
+      <ambientLight intensity={0.5} />
+      <pointLight position={[10, 10, 10]} intensity={1} />
+      <Float speed={2} rotationIntensity={1} floatIntensity={1}>
+        {type === 'flipper' && (
+          <RoundedBox args={[2, 1, 0.5]} radius={0.1} smoothness={4}>
+            <meshStandardMaterial color={color} wireframe />
+          </RoundedBox>
+        )}
+        {type === 'cable' && (
+          <TorusKnot args={[1, 0.2, 128, 16]}>
+            <meshStandardMaterial color={color} wireframe />
+          </TorusKnot>
+        )}
+        {type === 'pineapple' && (
+          <Box args={[1, 1.5, 1]}>
+             <MeshDistortMaterial
+                color={color}
+                speed={3}
+                distort={0.4}
+                radius={1}
+                wireframe
+            />
+          </Box>
+        )}
+        {type === 'suite' && (
+          <Sphere args={[1.2, 64, 64]}>
+            <MeshDistortMaterial
+                color={color}
+                speed={3}
+                distort={0.2}
+                radius={1.2}
+                wireframe
+            />
+          </Sphere>
+        )}
+      </Float>
+    </Canvas>
+  )
+}
+
+export default function ArsenalGallery() {
+  const containerRef = useRef<HTMLDivElement>(null!)
+  const horizontalRef = useRef<HTMLDivElement>(null!)
+
+  useGSAP(() => {
+    const totalWidth = horizontalRef.current.scrollWidth - window.innerWidth
+
+    gsap.to(horizontalRef.current, {
+      x: -totalWidth,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: containerRef.current,
+        pin: true,
+        scrub: 1,
+        start: 'top top',
+        end: `+=${totalWidth}`,
+      },
+    })
+  }, { scope: containerRef })
+
+  return (
+    <section ref={containerRef} className="h-screen overflow-hidden bg-black py-20 px-6">
+      <div className="absolute top-20 left-10 z-10">
+        <h2 className="text-4xl md:text-6xl font-bold uppercase mb-4 tracking-tighter">The Modern Arsenal</h2>
+        <div className="h-1 w-24 bg-neon-lime"></div>
+      </div>
+
+      <div ref={horizontalRef} className="flex h-full items-center pl-[10vw]">
+        {arsenalItems.map((item) => (
+          <div
+            key={item.id}
+            className="flex-shrink-0 w-[80vw] md:w-[45vw] h-[70vh] mr-20 border border-white/10 bg-white/5 backdrop-blur-md p-10 flex flex-col items-center justify-between group overflow-hidden"
+          >
+            <div className="w-full h-1/2 flex items-center justify-center relative">
+                <DeviceModel color={item.color} type={item.type} />
+                <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-10 transition-opacity"></div>
+            </div>
+
+            <div className="text-center">
+              <h3 className="text-3xl font-bold mb-4 uppercase tracking-widest text-white">{item.name}</h3>
+              <p className="text-gray-400 max-w-sm mx-auto leading-relaxed">{item.description}</p>
+            </div>
+
+            <button className="mt-8 px-6 py-3 border border-neon-lime text-neon-lime hover:bg-neon-lime hover:text-black transition-all uppercase font-bold tracking-widest text-sm">
+              Deploy Info
+            </button>
+          </div>
+        ))}
+      </div>
+    </section>
+  )
+}
