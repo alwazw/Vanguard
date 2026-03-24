@@ -4,12 +4,16 @@ import ServiceGrid from "@/components/ServiceGrid";
 import ArsenalGallery from "@/components/ArsenalGallery";
 import AcademyList from "@/components/AcademyList";
 import ROICalculator from "@/components/ROICalculator";
+import ThreatTicker from "@/components/ThreatTicker";
+import CaseStudies from "@/components/CaseStudies";
 
 export default function Home() {
   return (
     <main className="min-h-screen">
       <NetworkTopology />
+      <ThreatTicker />
       <Hero />
+      <CaseStudies />
       <section className="h-screen bg-black flex items-center justify-center p-12">
         <div className="max-w-4xl text-center">
             <h2 className="text-4xl md:text-6xl font-bold mb-8 uppercase tracking-tighter">Integrated Protection</h2>

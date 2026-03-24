@@ -41,29 +41,36 @@ export default function CustomCursor() {
     window.addEventListener('mousedown', onMouseDown)
     window.addEventListener('mouseup', onMouseUp)
 
-    // Add hover effects for buttons and links
-    const handleHover = () => {
-        const hoverables = document.querySelectorAll('button, a, .hover-target')
-        hoverables.forEach((el) => {
-            el.addEventListener('mouseenter', () => {
-                gsap.to(cursor, { scale: 1.5, backgroundColor: 'rgba(182, 255, 59, 0.2)', borderColor: '#B6FF3B', duration: 0.3 })
-                gsap.to(inner, { scale: 2, backgroundColor: '#B6FF3B', duration: 0.3 })
-                gsap.to(svg, { opacity: 1, duration: 0.3 })
-            })
-            el.addEventListener('mouseleave', () => {
-                gsap.to(cursor, { scale: 1, backgroundColor: 'transparent', borderColor: 'rgba(255, 255, 255, 0.5)', duration: 0.3 })
-                gsap.to(inner, { scale: 1, backgroundColor: '#B6FF3B', duration: 0.3 })
-                gsap.to(svg, { opacity: 0, duration: 0.3 })
-            })
-        })
+    const onMouseEnter = (e: MouseEvent) => {
+      const target = (e.target as HTMLElement).closest('button, a, .hover-target')
+      if (target) {
+        gsap.to(cursor, { scale: 1.5, backgroundColor: 'rgba(182, 255, 59, 0.2)', borderColor: '#B6FF3B', duration: 0.3 })
+        gsap.to(inner, { scale: 2, backgroundColor: '#B6FF3B', duration: 0.3 })
+        gsap.to(svg, { opacity: 1, duration: 0.3 })
+      }
     }
 
-    handleHover()
+    const onMouseLeave = (e: MouseEvent) => {
+      const target = (e.target as HTMLElement).closest('button, a, .hover-target')
+      if (target) {
+        gsap.to(cursor, { scale: 1, backgroundColor: 'transparent', borderColor: 'rgba(255, 255, 255, 0.5)', duration: 0.3 })
+        gsap.to(inner, { scale: 1, backgroundColor: '#B6FF3B', duration: 0.3 })
+        gsap.to(svg, { opacity: 0, duration: 0.3 })
+      }
+    }
+
+    window.addEventListener('mousemove', onMouseMove)
+    window.addEventListener('mousedown', onMouseDown)
+    window.addEventListener('mouseup', onMouseUp)
+    window.addEventListener('mouseover', onMouseEnter)
+    window.addEventListener('mouseout', onMouseLeave)
 
     return () => {
       window.removeEventListener('mousemove', onMouseMove)
       window.removeEventListener('mousedown', onMouseDown)
       window.removeEventListener('mouseup', onMouseUp)
+      window.removeEventListener('mouseover', onMouseEnter)
+      window.removeEventListener('mouseout', onMouseLeave)
     }
   }, [])
 
