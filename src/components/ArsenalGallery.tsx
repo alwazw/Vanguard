@@ -47,14 +47,30 @@ function DeviceModel({ color, type }: { color: string, type: string }) {
       <pointLight position={[10, 10, 10]} intensity={1} />
       <Float speed={2} rotationIntensity={1} floatIntensity={1}>
         {type === 'flipper' && (
-          <RoundedBox args={[2, 1, 0.5]} radius={0.1} smoothness={4}>
-            <meshStandardMaterial color={color} wireframe />
-          </RoundedBox>
+          <group>
+            <RoundedBox args={[2, 1, 0.5]} radius={0.1} smoothness={4}>
+              <meshStandardMaterial color={color} wireframe />
+            </RoundedBox>
+            <mesh position={[0, 0, 0.26]}>
+              <planeGeometry args={[1.2, 0.6]} />
+              <meshStandardMaterial color="#3B7BFF" emissive="#3B7BFF" emissiveIntensity={2} />
+            </mesh>
+            <mesh position={[0.7, -0.2, 0.26]}>
+              <circleGeometry args={[0.1, 32]} />
+              <meshStandardMaterial color="#B6FF3B" />
+            </mesh>
+          </group>
         )}
         {type === 'cable' && (
-          <TorusKnot args={[1, 0.2, 128, 16]}>
-            <meshStandardMaterial color={color} wireframe />
-          </TorusKnot>
+          <group>
+            <TorusKnot args={[1, 0.1, 128, 16]}>
+                <meshStandardMaterial color={color} wireframe />
+            </TorusKnot>
+            <mesh position={[1, 0, 0]} rotation={[0, Math.PI / 2, 0]}>
+                <boxGeometry args={[0.3, 0.3, 0.5]} />
+                <meshStandardMaterial color="#3B7BFF" />
+            </mesh>
+          </group>
         )}
         {type === 'pineapple' && (
           <Box args={[1, 1.5, 1]}>
@@ -88,19 +104,29 @@ export default function ArsenalGallery() {
   const horizontalRef = useRef<HTMLDivElement>(null!)
 
   useGSAP(() => {
-    const totalWidth = horizontalRef.current.scrollWidth - window.innerWidth
+    const calculateWidth = () => horizontalRef.current.scrollWidth - window.innerWidth
+    let totalWidth = calculateWidth()
 
-    gsap.to(horizontalRef.current, {
-      x: -totalWidth,
+    const animation = gsap.to(horizontalRef.current, {
+      x: () => -calculateWidth(),
       ease: 'none',
       scrollTrigger: {
         trigger: containerRef.current,
         pin: true,
         scrub: 1,
         start: 'top top',
-        end: `+=${totalWidth}`,
+        end: () => `+=${calculateWidth()}`,
+        invalidateOnRefresh: true,
       },
     })
+
+    const handleResize = () => {
+        totalWidth = calculateWidth()
+        ScrollTrigger.refresh()
+    }
+
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
   }, { scope: containerRef })
 
   return (
