@@ -32,6 +32,33 @@ export default function Hero() {
         opacity: 0,
         duration: 0.8,
     }, '-=1')
+
+    // Magnetic effect for buttons
+    const buttons = ctaRef.current.querySelectorAll('button')
+    buttons.forEach(btn => {
+      btn.addEventListener('mousemove', (e: any) => {
+        const rect = btn.getBoundingClientRect()
+        const x = e.clientX - rect.left - rect.width / 2
+        const y = e.clientY - rect.top - rect.height / 2
+
+        gsap.to(btn, {
+          x: x * 0.3,
+          y: y * 0.3,
+          duration: 0.5,
+          ease: 'power2.out'
+        })
+      })
+
+      btn.addEventListener('mouseleave', () => {
+        gsap.to(btn, {
+          x: 0,
+          y: 0,
+          duration: 0.5,
+          ease: 'elastic.out(1, 0.3)'
+        })
+      })
+    })
+
   }, { scope: container })
 
   return (
@@ -42,7 +69,7 @@ export default function Hero() {
       <div className="max-w-7xl w-full text-center z-10">
         <h1
           ref={titleRef}
-          className="text-6xl md:text-8xl lg:text-9xl font-bold uppercase tracking-tight leading-none mb-6 flex flex-wrap justify-center gap-x-4"
+          className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-bold uppercase tracking-tight leading-none mb-6 flex flex-wrap justify-center gap-x-2 md:gap-x-4"
         >
           {"The Vanguard Protocol".split(" ").map((word, i) => (
             <span key={i} className={`word-span inline-block ${word === "Vanguard" ? "text-neon-lime" : ""}`}>
@@ -52,16 +79,16 @@ export default function Hero() {
         </h1>
         <p
           ref={subtitleRef}
-          className="text-lg md:text-2xl text-gray-400 max-w-2xl mx-auto mb-10"
+          className="text-base md:text-2xl text-gray-400 max-w-2xl mx-auto mb-10"
         >
           Converging physical and cyber security to architect a resilient tomorrow.
           Next-generation consulting for the modern adversary.
         </p>
         <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="px-8 py-4 bg-neon-lime text-black font-bold uppercase tracking-widest hover:bg-white transition-colors">
+          <button className="px-8 py-4 bg-neon-lime text-black font-bold uppercase tracking-widest hover:bg-white transition-colors cursor-none">
             Initiate Protocol
           </button>
-          <button className="px-8 py-4 border border-white text-white font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all">
+          <button className="px-8 py-4 border border-white text-white font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all cursor-none">
             View Arsenal
           </button>
         </div>
