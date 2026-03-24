@@ -5,7 +5,7 @@
   --color-deep-black: #000000;
   --color-vanguard-blue: #3B7BFF;
 
-  --color-background: var(--deep-black);
+  --color-background: var(--color-deep-black);
   --color-foreground: white;
 }
 
