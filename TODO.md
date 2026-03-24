@@ -1,21 +1,14 @@
-Project Roadmap: The Vanguard Protocol Launch
-
-​[x] Phase 1: Foundation
-​[x] Initialize Next.js 15 App Router project with Tailwind v4.
-​[x] Configure AGENTS.md and basic folder structure.
-​[x] Setup Lenis smooth scrolling and GSAP context provider.
-
-​[x] Phase 2: Hero & Visual Narrative
-​[x] Build 'Explosive' GSAP entry animation.
-​[x] Implement Three.js 3D background (pulsing network topology).
-​[x] Create custom hand-graphic cursor.
-
-​[x] Phase 3: Core Service Showcases
-​[x] Implement Bento Grid for Consulting Pillars with hover-glitch effects.
-​[x] Build horizontal scroll gallery for 'The Modern Arsenal' hardware.
-​[x] Integrate 3D Flipper Zero and O.MG cable models.
-
-​[x] Phase 4: Academy & Conversion
-​[x] Build interactive 4-Tier Academy list with animated accordions.
-​[x] Create ROI calculator/dashboard showing $232k savings.
-​[x] Mobile optimization and final performance audit (Lighthouse 95+).
+Project Roadmap: Tactical Overhaul
+​[ ] Phase 1: Visual Cleanup
+​[ ] Remove existing Win98/Retro cursor trackers and legacy animation scripts.
+​[ ] Initialize Shadcn UI and install base components (Button, Card, Accordion, Sheet).
+​[ ] Update globals.css with the Tactical Red (#E31C25) and Black palette variables.
+​[ ] Phase 2: Narrative Hero & Video Integration
+​[ ] Implement a full-screen Video Background component with Server-Side streaming and Suspense fallbacks.
+​[ ] Build the 'Approach' Hero section: Animate sharp text reveal over the drone recon video.
+​[ ] Phase 3: The 'Breach' Horizontal Scroll
+​[ ] Create a horizontally scrolling gallery using GSAP ScrollTrigger to show the Rover duct-infiltration sequence.
+​[ ] Integrate 'Heat Signature' overlays on image/video assets using CSS filters or SVG masks.
+​[ ] Phase 4: Content & Module Overhaul
+​[ ] Rewrite all 'Service Module' copy to follow a 'Problem-Impact-Solution' narrative.
+​[ ] Implement Bento-grid layouts for the 'Modern Arsenal' hardware toolkit.
