@@ -13,7 +13,12 @@ export default function Hero() {
   useGSAP(() => {
     const tl = gsap.timeline({ defaults: { ease: 'power4.out' } })
 
-    tl.from(titleRef.current, {
+    // Split text for stagger effect
+    const words = titleRef.current.innerText.split(' ')
+    titleRef.current.innerHTML = words.map(word => `<span class="inline-block">${word}</span>`).join(' ')
+    const spans = titleRef.current.querySelectorAll('span')
+
+    tl.from(spans, {
       y: 100,
       opacity: 0,
       duration: 1.5,
@@ -24,12 +29,12 @@ export default function Hero() {
         y: 50,
         opacity: 0,
         duration: 1.2,
-    }, '-=1')
+    }, '-=1.2')
     .from(ctaRef.current, {
         y: 20,
         opacity: 0,
         duration: 0.8,
-    }, '-=0.8')
+    }, '-=1')
   }, { scope: container })
 
   return (
@@ -40,7 +45,7 @@ export default function Hero() {
       <div className="max-w-7xl w-full text-center z-10">
         <h1
           ref={titleRef}
-          className="text-6xl md:text-8xl lg:text-9xl font-bold uppercase tracking-tight leading-none mb-6"
+          className="text-6xl md:text-8xl lg:text-9xl font-bold uppercase tracking-tight leading-none mb-6 flex flex-wrap justify-center gap-x-4"
         >
           The <span className="text-neon-lime">Vanguard</span> Protocol
         </h1>

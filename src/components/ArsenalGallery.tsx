@@ -1,0 +1,110 @@
+'use client'
+
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useRef } from 'react'
+import { Canvas } from '@react-three/fiber'
+import { MeshDistortMaterial, Sphere, Float } from '@react-three/drei'
+
+gsap.registerPlugin(ScrollTrigger)
+
+const arsenalItems = [
+  {
+    id: 1,
+    name: 'Flipper Zero',
+    description: 'A multi-tool for hackers, designed for interacting with digital environments.',
+    color: '#B6FF3B',
+  },
+  {
+    id: 2,
+    name: 'O.MG Cable',
+    description: 'A highly advanced USB cable that functions as a covert remote keystroke injector.',
+    color: '#3B7BFF',
+  },
+  {
+    id: 3,
+    name: 'WiFi Pineapple',
+    description: 'The industry-standard rogue access point for modern-day network penetration.',
+    color: '#FF3B7B',
+  },
+  {
+    id: 4,
+    name: 'Hak5 Suite',
+    description: 'The complete set of advanced penetration testing tools for professional red teams.',
+    color: '#B6FF3B',
+  },
+]
+
+function DeviceModel({ color }: { color: string }) {
+  return (
+    <Canvas camera={{ position: [0, 0, 3], fov: 60 }}>
+      <ambientLight intensity={0.5} />
+      <pointLight position={[10, 10, 10]} intensity={1} />
+      <Float speed={2} rotationIntensity={1} floatIntensity={1}>
+        <Sphere args={[1, 64, 64]}>
+          <MeshDistortMaterial
+            color={color}
+            speed={3}
+            distort={0.4}
+            radius={1}
+            wireframe
+          />
+        </Sphere>
+      </Float>
+    </Canvas>
+  )
+}
+
+export default function ArsenalGallery() {
+  const containerRef = useRef<HTMLDivElement>(null!)
+  const horizontalRef = useRef<HTMLDivElement>(null!)
+
+  useGSAP(() => {
+    const totalWidth = horizontalRef.current.scrollWidth - window.innerWidth
+
+    gsap.to(horizontalRef.current, {
+      x: -totalWidth,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: containerRef.current,
+        pin: true,
+        scrub: 1,
+        start: 'top top',
+        end: `+=${totalWidth}`,
+      },
+    })
+  }, { scope: containerRef })
+
+  return (
+    <section ref={containerRef} className="h-screen overflow-hidden bg-black py-20 px-6">
+      <div className="absolute top-20 left-10 z-10">
+        <h2 className="text-4xl md:text-6xl font-bold uppercase mb-4">The Modern Arsenal</h2>
+        <div className="h-1 w-24 bg-neon-lime"></div>
+      </div>
+
+      <div ref={horizontalRef} className="flex h-full items-center pl-[10vw]">
+        {arsenalItems.map((item) => (
+          <div
+            key={item.id}
+            className="flex-shrink-0 w-[80vw] md:w-[45vw] h-[70vh] mr-20 border border-white/10 bg-white/5 backdrop-blur-md p-10 flex flex-col items-center justify-between group overflow-hidden"
+          >
+            <div className="w-full h-1/2 flex items-center justify-center relative">
+                <DeviceModel color={item.color} />
+                <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-10 transition-opacity"></div>
+            </div>
+
+            <div className="text-center">
+              <h3 className="text-3xl font-bold mb-4 uppercase tracking-widest text-white">{item.name}</h3>
+              <p className="text-gray-400 max-w-sm mx-auto leading-relaxed">{item.description}</p>
+            </div>
+
+            <button className="mt-8 px-6 py-3 border border-neon-lime text-neon-lime hover:bg-neon-lime hover:text-black transition-all uppercase font-bold tracking-widest text-sm">
+              Deploy Info
+            </button>
+          </div>
+        ))}
+      </div>
+    </section>
+  )
+}
