@@ -2,7 +2,8 @@
 
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
-import { useRef } from 'react'
+import { useRef, useState, useEffect } from 'react'
+import { Button } from '@/components/ui/button'
 
 export default function Hero() {
   const container = useRef<HTMLDivElement>(null!)
@@ -10,88 +11,129 @@ export default function Hero() {
   const subtitleRef = useRef<HTMLParagraphElement>(null!)
   const ctaRef = useRef<HTMLDivElement>(null!)
 
+  const [glitchText, setGlitchText] = useState("THE VANGUARD PROTOCOL")
+  const [isRevealed, setIsRevealed] = useState(false)
+
   useGSAP(() => {
     const tl = gsap.timeline({ defaults: { ease: 'power4.out' } })
 
-    const spans = titleRef.current.querySelectorAll('.word-span')
+    // Animate the spans that are already in the DOM (rendered by React)
+    const chars = container.current.querySelectorAll('.char')
 
-    tl.from(spans, {
-      y: 100,
-      opacity: 0,
-      duration: 1.5,
-      skewY: 7,
-      stagger: 0.1,
+    tl.to(chars, {
+      opacity: 1,
+      y: 0,
+      duration: 0.05,
+      stagger: 0.03,
+      ease: "none",
+      onComplete: () => setIsRevealed(true)
     })
     .from(subtitleRef.current, {
-        y: 50,
-        opacity: 0,
-        duration: 1.2,
-    }, '-=1.2')
-    .from(ctaRef.current, {
-        y: 20,
+        x: -20,
         opacity: 0,
         duration: 0.8,
-    }, '-=1')
-
-    // Magnetic effect for buttons
-    const buttons = ctaRef.current.querySelectorAll('button')
-    buttons.forEach(btn => {
-      btn.addEventListener('mousemove', (e: any) => {
-        const rect = btn.getBoundingClientRect()
-        const x = e.clientX - rect.left - rect.width / 2
-        const y = e.clientY - rect.top - rect.height / 2
-
-        gsap.to(btn, {
-          x: x * 0.3,
-          y: y * 0.3,
-          duration: 0.5,
-          ease: 'power2.out'
-        })
-      })
-
-      btn.addEventListener('mouseleave', () => {
-        gsap.to(btn, {
-          x: 0,
-          y: 0,
-          duration: 0.5,
-          ease: 'elastic.out(1, 0.3)'
-        })
-      })
-    })
+        borderLeft: "0px solid #E31C25"
+    }, "-=0.2")
+    .from(ctaRef.current, {
+        y: 10,
+        opacity: 0,
+        duration: 0.5,
+    }, "-=0.5")
 
   }, { scope: container })
+
+  useEffect(() => {
+    if (!isRevealed) return
+
+    const interval = setInterval(() => {
+        const original = "THE VANGUARD PROTOCOL"
+        const chars = "ABCDEFGHIJKLMN0123456789$#!?/"
+        let iterations = 0
+
+        const glitchInterval = setInterval(() => {
+            setGlitchText(prev =>
+                original.split("").map((char, index) => {
+                    if(index < iterations) return original[index]
+                    return chars[Math.floor(Math.random() * chars.length)]
+                }).join("")
+            )
+
+            if(iterations >= original.length) {
+                clearInterval(glitchInterval)
+            }
+            iterations += 1/3
+        }, 30)
+    }, 5000)
+
+    return () => clearInterval(interval)
+  }, [isRevealed])
 
   return (
     <section
         ref={container}
-        className="relative h-screen flex flex-col items-center justify-center px-6 overflow-hidden"
+        className="relative h-screen flex flex-col items-start justify-center px-6 md:px-24 overflow-hidden bg-deep-black"
     >
-      <div className="max-w-7xl w-full text-center z-10">
+      {/* Background Video Placeholder with Tactical Overlay */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#050505_100%)] z-10" />
+        <div className="absolute inset-0 bg-deep-black/60 z-10" />
+        <div className="w-full h-full bg-[#111]">
+           <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none"
+                style={{backgroundImage: 'radial-gradient(#E31C25 0.5px, transparent 0.5px)', backgroundSize: '20px 20px'}} />
+        </div>
+      </div>
+
+      <div className="relative z-20 max-w-6xl w-full text-left">
+        <div className="flex items-center gap-4 mb-4">
+            <span className="w-12 h-[1px] bg-tactical-red" />
+            <span className="text-tactical-red font-mono text-sm tracking-[0.3em] uppercase animate-pulse">System Online // Status: Red</span>
+        </div>
+
         <h1
           ref={titleRef}
-          className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-bold uppercase tracking-tight leading-none mb-6 flex flex-wrap justify-center gap-x-2 md:gap-x-4"
+          className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter leading-[0.9] mb-8 text-white flex flex-wrap"
         >
-          {"The Vanguard Protocol".split(" ").map((word, i) => (
-            <span key={i} className={`word-span inline-block ${word === "Vanguard" ? "text-neon-lime" : ""}`}>
-              {word}
+          {glitchText.split("").map((char, i) => (
+            <span
+                key={i}
+                className={`char inline-block ${!isRevealed ? 'opacity-0 translate-y-4' : ''}`}
+            >
+              {char === " " ? "\u00A0" : char}
             </span>
           ))}
         </h1>
-        <p
-          ref={subtitleRef}
-          className="text-base md:text-2xl text-gray-400 max-w-2xl mx-auto mb-10"
-        >
-          Converging physical and cyber security to architect a resilient tomorrow.
-          Next-generation consulting for the modern adversary.
-        </p>
-        <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="px-8 py-4 bg-neon-lime text-black font-bold uppercase tracking-widest hover:bg-white transition-colors cursor-none">
-            Initiate Protocol
-          </button>
-          <button className="px-8 py-4 border border-white text-white font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all cursor-none">
-            View Arsenal
-          </button>
+
+        <div className="border-l-2 border-tactical-red pl-8 mb-12">
+            <p
+            ref={subtitleRef}
+            className="text-base md:text-xl text-gray-400 max-w-2xl leading-relaxed uppercase tracking-wide font-mono"
+            >
+            Elite counter-insurgency and digital fortification.
+            We do not mitigate risk. We eliminate the threat.
+            <br />
+            <span className="text-gray-600 text-sm mt-2 block">[REDACTED INFORMATION CLASSIFIED]</span>
+            </p>
         </div>
+
+        <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 md:gap-6">
+          <Button size="lg" className="bg-tactical-red text-white hover:bg-white hover:text-black px-8 md:px-12 py-6 md:py-8 text-lg md:text-xl font-bold uppercase tracking-widest border-none transition-all">
+            Deploy Now
+          </Button>
+          <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white hover:text-black px-8 md:px-12 py-6 md:py-8 text-lg md:text-xl font-bold uppercase tracking-widest transition-all">
+            Intel Briefing
+          </Button>
+        </div>
+      </div>
+
+      {/* Tactical Corner Accents */}
+      <div className="absolute top-12 right-12 text-tactical-red/30 font-mono text-xs text-right hidden md:block">
+        COORD: 34.0522° N, 118.2437° W<br />
+        SIGNAL: ENCRYPTED_AES_256<br />
+        OPERATOR: VANGUARD_01
+      </div>
+
+      <div className="absolute bottom-12 left-12 w-64 h-1 bg-white/5 overflow-hidden hidden md:block">
+        <div className="w-1/3 h-full bg-tactical-red animate-[scan_3s_infinite_linear]" />
       </div>
     </section>
   )

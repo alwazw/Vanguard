@@ -6,25 +6,25 @@ import { useRef } from 'react'
 
 const cases = [
   {
-    title: 'Scattered Spider Campaign',
+    title: 'SCATTERED_SPIDER',
     cost: '£300M',
-    type: 'Social Engineering + Physical Breach',
-    description: 'A multi-domain campaign that leveraged advanced pretexting and physical access to bypass modern MFA perimeters.',
-    color: '#B6FF3B'
+    type: 'Social Engineering // Physical',
+    description: 'Bypassing modern MFA via coordinated pretexting and physical access. Systemic collapse of multi-domain security.',
+    color: '#E31C25'
   },
   {
-    title: 'Jaguar Land Rover Impact',
+    title: 'JLR_INFRASTRUCTURE',
     cost: '£1.98B',
-    type: 'Critical Infrastructure Failure',
-    description: 'Total economic impact resulting from ransomware targeting unpatched physical hardware vulnerabilities.',
-    color: '#3B7BFF'
+    type: 'Critical HW Failure // Ransomware',
+    description: 'Total economic impact of targeting unpatched physical hardware vulnerabilities in global supply chains.',
+    color: '#E31C25'
   },
   {
-    title: 'McDonald\'s Records',
-    cost: '64M RECORDS',
-    type: 'Default AI Credentials',
-    description: 'Exposure of millions of customer records due to weak default credentials on physically deployed AI systems.',
-    color: '#FF3B7B'
+    title: 'MCDONALD_RECORDS',
+    cost: '64M RECS',
+    type: 'AI System Breach // Defaults',
+    description: 'Mass exploitation of default credentials on physically deployed AI infrastructure. Total exposure of data perimeters.',
+    color: '#E31C25'
   }
 ]
 
@@ -37,46 +37,54 @@ export default function CaseStudies() {
         trigger: containerRef.current,
         start: 'top 70%',
       },
-      y: 100,
+      y: 40,
       opacity: 0,
-      duration: 1.2,
-      stagger: 0.3,
-      ease: 'power4.out',
+      duration: 1,
+      stagger: 0.2,
+      ease: 'power3.out',
     })
   }, { scope: containerRef })
 
   return (
-    <section ref={containerRef} className="py-32 px-6 bg-black">
-      <div className="max-w-7xl mx-auto mb-20">
-        <h2 className="text-4xl md:text-7xl font-bold uppercase mb-6 tracking-tighter">Asymmetric Case Studies</h2>
-        <p className="text-gray-500 text-lg max-w-2xl">Visualizing the real-world economic impact of fragmented security strategies.</p>
-        <div className="h-1 w-32 bg-neon-lime mt-8"></div>
+    <section ref={containerRef} className="py-32 px-12 bg-deep-black border-y border-white/5">
+      <div className="max-w-7xl mx-auto mb-24 flex flex-col md:flex-row items-end justify-between">
+        <div>
+            <span className="text-tactical-red font-mono text-sm tracking-[0.4em] uppercase mb-4 block animate-pulse">Impact Visualizer</span>
+            <h2 className="text-5xl md:text-8xl font-black uppercase tracking-tighter text-white">CASE_STUDIES</h2>
+        </div>
+        <div className="text-right hidden md:block">
+            <span className="text-gray-500 font-mono text-xs uppercase tracking-widest leading-loose">
+                DATA_VISUALIZATION_v4.2<br />
+                ENCRYPTED_FEED_01
+            </span>
+        </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-1 max-w-7xl mx-auto bg-white/5">
         {cases.map((c) => (
           <div
             key={c.title}
-            className="case-card group p-12 border border-white/5 bg-white/5 backdrop-blur-xl relative overflow-hidden flex flex-col justify-between h-[500px]"
+            className="case-card group p-12 bg-deep-black relative overflow-hidden flex flex-col justify-between h-[600px] border border-white/5 transition-all duration-500 hover:border-tactical-red/30"
           >
-            <div
-                className="absolute top-0 left-0 w-full h-1"
-                style={{ backgroundColor: c.color }}
-            ></div>
-
+            {/* Header */}
             <div>
-              <span className="text-xs font-bold uppercase tracking-[0.3em] text-gray-500 block mb-4">{c.type}</span>
-              <h3 className="text-3xl font-bold mb-6 group-hover:text-white transition-colors">{c.title}</h3>
-              <p className="text-gray-400 leading-relaxed mb-8">{c.description}</p>
+              <div className="flex justify-between items-center mb-10">
+                  <span className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-tactical-red">{c.type}</span>
+                  <div className="w-1.5 h-1.5 bg-tactical-red animate-pulse" />
+              </div>
+              <h3 className="text-4xl font-black mb-8 group-hover:text-white transition-colors uppercase tracking-tight leading-none">{c.title}</h3>
+              <p className="text-gray-500 font-mono text-sm leading-relaxed mb-8 uppercase tracking-wide border-l border-white/10 pl-6">{c.description}</p>
             </div>
 
+            {/* Bottom Section */}
             <div>
-              <div className="text-5xl font-black mb-2 italic" style={{ color: c.color }}>{c.cost}</div>
-              <div className="text-xs font-bold uppercase text-gray-600 tracking-widest">Total Economic Impact</div>
+              <div className="text-5xl font-black mb-4 text-white group-hover:text-tactical-red transition-colors duration-300">{c.cost}</div>
+              <div className="text-[10px] font-bold uppercase text-gray-600 tracking-[0.3em]">Total Economic Impact</div>
             </div>
 
-            <div className="absolute -bottom-10 -right-10 text-[120px] font-black opacity-[0.03] select-none pointer-events-none group-hover:opacity-10 transition-opacity">
-                EXPLOIT
+            {/* Decorative Grid Overlay */}
+            <div className="absolute top-0 right-0 p-4 opacity-10 font-mono text-[8px] text-white">
+                0x{Math.random().toString(16).substr(2, 8).toUpperCase()}
             </div>
           </div>
         ))}
