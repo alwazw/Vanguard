@@ -46,10 +46,10 @@ export default function ROICalculator() {
   return (
     <section ref={containerRef} className="py-24 px-6 bg-white/5 backdrop-blur-md border-y border-white/10">
       <div className="max-w-7xl mx-auto text-center mb-16">
-        <h2 className="text-4xl md:text-6xl font-bold uppercase mb-4 tracking-tighter">Impact Metrics</h2>
+        <h2 className="text-4xl md:text-6xl font-bold uppercase mb-4 tracking-tighter">The ROI of Proactive Resilience</h2>
         <p className="text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed">
-            The traditional siloed approach to security is no longer viable.
-            Visualize the potential impact of physical and cyber security convergence.
+            The cost of inaction versus the cost of defense. A fractional annual investment
+            delivers continuous compliance validation and proactive threat mitigation.
         </p>
       </div>
 
@@ -72,13 +72,13 @@ export default function ROICalculator() {
       </div>
 
       <div className="mt-20 max-w-4xl mx-auto p-12 bg-neon-lime text-black text-center">
-          <h2 className="text-3xl md:text-5xl font-black uppercase mb-6 italic tracking-tight">Stop the hemorrhage</h2>
+          <h2 className="text-3xl md:text-5xl font-black uppercase mb-6 italic tracking-tight">Initiate Vanguard Protocol</h2>
           <p className="text-xl font-bold mb-8 max-w-2xl mx-auto opacity-80 leading-snug">
-              60% of enterprises will converge physical and cyber security by 2027.
-              The Vanguard Protocol is the multi-domain framework you need.
+              Move decisively and secure the multi-domain landscape before the adversary does.
+              Continuous security validation through physical audits, AI orchestration, and elite training.
           </p>
           <button className="px-12 py-5 bg-black text-white font-bold uppercase tracking-widest text-lg hover:bg-white hover:text-black transition-all">
-              Initiate Risk Assessment
+              Request Assessment
           </button>
       </div>
     </section>

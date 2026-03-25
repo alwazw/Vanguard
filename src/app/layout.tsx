@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "The Vanguard Protocol | Holistic Cybersecurity Consultancy",
-  description: "Ultra-modern, motion-heavy digital experience for a holistic cybersecurity consultancy.",
+  title: "The Vanguard Protocol | Multi-Domain Security Validation",
+  description: "Advanced penetration testing of cyber and physical security. AI-driven remediation deployment. Elite security training. The traditional perimeter is obsolete.",
 };
 
 export default function RootLayout({

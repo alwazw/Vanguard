@@ -8,30 +8,30 @@ const tiers = [
   {
     id: 1,
     name: 'Tier 1: Foundational',
-    focus: 'Hygiene & Human-Centric Security',
-    details: 'MFA best practices, phishing simulations, password hygiene, and social engineering awareness.',
-    skills: ['Social Engineering', 'Phishing', 'MFA Implementation'],
+    focus: 'Hygiene, Phishing, MFA',
+    details: 'Essential security hygiene, multi-factor authentication best practices, phishing recognition and simulation exercises, and social engineering awareness for all personnel.',
+    skills: ['Password Hygiene', 'Phishing Defense', 'MFA Implementation'],
   },
   {
     id: 2,
     name: 'Tier 2: Core Technical',
-    focus: 'Digital & RF Perimeter Exploitation',
-    details: 'OWASP WSTG, basic Flipper Zero operations, network reconnaissance, and wireless security.',
-    skills: ['OWASP', 'RF Analysis', 'NetSec'],
+    focus: 'OWASP & Hardware Basics',
+    details: 'OWASP Web Security Testing Guide, basic Flipper Zero operations, network reconnaissance fundamentals, and RF security foundations.',
+    skills: ['OWASP WSTG', 'Flipper Zero Basics', 'Network Recon'],
   },
   {
     id: 3,
     name: 'Tier 3: Specialist',
-    focus: 'Cloud-Native & AI Red Teaming',
-    details: 'Cloud-native penetration testing, LLM security integration, and advanced hardware implants.',
-    skills: ['CloudSec', 'LLM Red Teaming', 'Advanced Implants'],
+    focus: 'Cloud-Native & LLM Integration',
+    details: 'Cloud-native penetration testing methodologies, LLM security integration, advanced API security, and specialized hardware implant deployment.',
+    skills: ['Cloud Pentesting', 'LLM Security', 'API Exploitation'],
   },
   {
     id: 4,
-    name: 'Tier 4: Advanced',
+    name: 'Tier 4: Advanced Black Belt',
     focus: 'Full Spectrum Operations',
-    details: 'Drone ISR, Hak5 suite, high-end lock picking, and autonomous AI security agents.',
-    skills: ['Drone ISR', 'Autonomous Agents', 'Full Spectrum'],
+    details: 'Drone-based ISR operations, complete Hak5 suite mastery, advanced lock picking techniques, and closed-loop AI agent deployment for autonomous security validation.',
+    skills: ['Drone ISR', 'Hak5 Suite', 'Closed-Loop AI Agents'],
   },
 ]
 
@@ -61,7 +61,7 @@ export default function AcademyList() {
     <section ref={containerRef} className="py-24 px-6 max-w-5xl mx-auto">
       <div className="mb-16">
         <h2 className="text-4xl md:text-6xl font-bold uppercase mb-4">Vanguard Academy</h2>
-        <p className="text-gray-400 text-lg">Specialized training designed to architect a resilient tomorrow.</p>
+        <p className="text-gray-400 text-lg">Reduces average breach cost by $232,000 with up to 427% ROI over 3 years.</p>
         <div className="h-1 w-24 bg-neon-lime mt-4"></div>
       </div>
 

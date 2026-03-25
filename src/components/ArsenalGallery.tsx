@@ -13,28 +13,28 @@ const arsenalItems = [
   {
     id: 1,
     name: 'Flipper Zero',
-    description: 'A multi-tool for hackers, designed for interacting with digital environments.',
+    description: 'Clones 125kHz badges, emulates IR signals, and enables Bluetooth spamming for physical access testing.',
     color: '#B6FF3B',
     type: 'flipper'
   },
   {
     id: 2,
     name: 'O.MG Cable',
-    description: 'A highly advanced USB cable that functions as a covert remote keystroke injector.',
+    description: 'Remote keystroke injection and data exfiltration on plug-in. A Trojan Horse disguised as a standard USB cable.',
     color: '#3B7BFF',
     type: 'cable'
   },
   {
     id: 3,
-    name: 'WiFi Pineapple',
-    description: 'The industry-standard rogue access point for modern-day network penetration.',
+    name: 'WiFi Pineapple Mark VII',
+    description: 'Industry-standard rogue access point for man-in-the-middle attacks and network penetration testing.',
     color: '#FF3B7B',
     type: 'pineapple'
   },
   {
     id: 4,
-    name: 'Hak5 Suite',
-    description: 'The complete set of advanced penetration testing tools for professional red teams.',
+    name: 'iCopy-XS',
+    description: 'Decodes and replicates high-security badges for authorized physical penetration assessments.',
     color: '#B6FF3B',
     type: 'suite'
   },

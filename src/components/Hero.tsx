@@ -81,15 +81,15 @@ export default function Hero() {
           ref={subtitleRef}
           className="text-base md:text-2xl text-gray-400 max-w-2xl mx-auto mb-10"
         >
-          Converging physical and cyber security to architect a resilient tomorrow.
-          Next-generation consulting for the modern adversary.
+          Multi-domain penetration testing. AI-driven remediation deployment. 
+          Elite security training. The traditional perimeter is obsolete.
         </p>
         <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 justify-center">
           <button className="px-8 py-4 bg-neon-lime text-black font-bold uppercase tracking-widest hover:bg-white transition-colors cursor-none">
-            Initiate Protocol
+            Request Assessment
           </button>
           <button className="px-8 py-4 border border-white text-white font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all cursor-none">
-            View Arsenal
+            View Services
           </button>
         </div>
       </div>

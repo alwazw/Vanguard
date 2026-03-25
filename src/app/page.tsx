@@ -16,11 +16,12 @@ export default function Home() {
       <CaseStudies />
       <section className="h-screen bg-black flex items-center justify-center p-12">
         <div className="max-w-4xl text-center">
-            <h2 className="text-4xl md:text-6xl font-bold mb-8 uppercase tracking-tighter">Integrated Protection</h2>
+            <h2 className="text-4xl md:text-6xl font-bold mb-8 uppercase tracking-tighter">The Collapse of the Perimeter</h2>
             <p className="text-xl text-gray-400 leading-relaxed max-w-2xl mx-auto">
-                While digital perimeters become increasingly sophisticated, the physical
-                vulnerabilities inherent in human-centric infrastructure remain the
-                primary catalyst for catastrophic system failures.
+                The distinction between a physical breach and a cyber catastrophe is functionally 
+                non-existent. The strongest digital encryption fails when an attacker gains 
+                physical access to a server room. 60% of enterprises will converge physical and 
+                cyber security operations by 2027.
             </p>
         </div>
       </section>
@@ -34,7 +35,7 @@ export default function Home() {
                 The <span className="text-neon-lime">Vanguard</span> Protocol
             </div>
             <div className="text-gray-500 text-sm font-mono uppercase tracking-[0.2em]">
-                © 2025 All Rights Reserved. Holistic Security Convergence.
+                © 2025 All Rights Reserved. Multi-Domain Security Validation.
             </div>
         </div>
       </footer>

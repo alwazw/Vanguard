@@ -6,24 +6,24 @@ import { useRef } from 'react'
 
 const cases = [
   {
-    title: 'Scattered Spider Campaign',
+    title: 'Scattered Spider',
     cost: '£300M',
-    type: 'Social Engineering + Physical Breach',
-    description: 'A multi-domain campaign that leveraged advanced pretexting and physical access to bypass modern MFA perimeters.',
+    type: 'Pretexting / Social Engineering',
+    description: 'Advanced social engineering campaign demonstrating why converged physical-cyber defenses are essential against sophisticated threat actors.',
     color: '#B6FF3B'
   },
   {
-    title: 'Jaguar Land Rover Impact',
+    title: 'Jaguar Land Rover',
     cost: '£1.98B',
-    type: 'Critical Infrastructure Failure',
-    description: 'Total economic impact resulting from ransomware targeting unpatched physical hardware vulnerabilities.',
+    type: 'IT Network Ransomware',
+    description: 'Estimated economic damage from ransomware attack exploiting vulnerabilities that converged security testing would have identified.',
     color: '#3B7BFF'
   },
   {
-    title: 'McDonald\'s Records',
+    title: 'McDonald\'s Breach',
     cost: '64M RECORDS',
-    type: 'Default AI Credentials',
-    description: 'Exposure of millions of customer records due to weak default credentials on physically deployed AI systems.',
+    type: 'Weak Default AI Credentials',
+    description: 'Massive data exposure from default credentials on AI systems - precisely the vulnerability our penetration testing identifies.',
     color: '#FF3B7B'
   }
 ]
@@ -48,8 +48,8 @@ export default function CaseStudies() {
   return (
     <section ref={containerRef} className="py-32 px-6 bg-black">
       <div className="max-w-7xl mx-auto mb-20">
-        <h2 className="text-4xl md:text-7xl font-bold uppercase mb-6 tracking-tighter">Asymmetric Case Studies</h2>
-        <p className="text-gray-500 text-lg max-w-2xl">Visualizing the real-world economic impact of fragmented security strategies.</p>
+        <h2 className="text-4xl md:text-7xl font-bold uppercase mb-6 tracking-tighter">2025 Threat Landscape</h2>
+        <p className="text-gray-500 text-lg max-w-2xl">Real-world economic impact of fragmented security strategies. Average US breach cost: $10M. Mid-market firm impact: up to $29M.</p>
         <div className="h-1 w-32 bg-neon-lime mt-8"></div>
       </div>
 

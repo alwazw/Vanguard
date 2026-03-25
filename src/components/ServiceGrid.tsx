@@ -7,33 +7,66 @@ import { useRef } from 'react'
 const pillars = [
   {
     id: 1,
-    title: 'Physical Penetration Testing',
-    description: 'Mapping CCTV blind spots, lock picking, and aerial reconnaissance via drone ISR.',
-    icon: '🏢',
+    title: 'Converged Penetration Testing',
+    description: 'Advanced physical-cyber infiltration combining OSINT, drone reconnaissance, RFID cloning, hardware implants, and lateral network movement to identify vulnerabilities before adversaries do.',
+    icon: 'target',
     size: 'col-span-12 md:col-span-8',
   },
   {
     id: 2,
-    title: 'Cyber Exploitation',
-    description: 'Advanced network infiltration, hardware implants, and digital forensic analysis.',
-    icon: '💻',
+    title: 'AI-Driven Red Teaming',
+    description: 'Agentic AI orchestration executing cyber campaigns 108x faster than traditional methods with continuous closed-loop malware iteration.',
+    icon: 'cpu',
     size: 'col-span-12 md:col-span-4',
   },
   {
     id: 3,
-    title: 'Vulnerability Assessment',
-    description: 'Holistic scanning across physical and digital perimeters to identify asymmetric threats.',
-    icon: '🔍',
+    title: 'Remediation Deployment',
+    description: 'Strategic guidance, managed vulnerability lifecycle, rapid response patch management, and incident recovery support.',
+    icon: 'shield',
     size: 'col-span-12 md:col-span-4',
   },
   {
     id: 4,
-    title: 'Vanguard Academy',
-    description: 'Tiered training for operational teams and C-suite, reducing breach costs by $232k+.',
-    icon: '🎓',
+    title: 'Vanguard Training Academy',
+    description: 'Four-tier certification from foundational hygiene to advanced drone ISR and autonomous AI agents. Reduces average breach cost by $232,000 with up to 427% ROI.',
+    icon: 'graduation',
     size: 'col-span-12 md:col-span-8',
   },
 ]
+
+const iconMap: Record<string, React.ReactNode> = {
+  target: (
+    <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <circle cx="12" cy="12" r="10" />
+      <circle cx="12" cy="12" r="6" />
+      <circle cx="12" cy="12" r="2" />
+    </svg>
+  ),
+  cpu: (
+    <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <rect x="4" y="4" width="16" height="16" rx="2" />
+      <rect x="9" y="9" width="6" height="6" />
+      <line x1="9" y1="1" x2="9" y2="4" /><line x1="15" y1="1" x2="15" y2="4" />
+      <line x1="9" y1="20" x2="9" y2="23" /><line x1="15" y1="20" x2="15" y2="23" />
+      <line x1="20" y1="9" x2="23" y2="9" /><line x1="20" y1="15" x2="23" y2="15" />
+      <line x1="1" y1="9" x2="4" y2="9" /><line x1="1" y1="15" x2="4" y2="15" />
+    </svg>
+  ),
+  shield: (
+    <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+      <polyline points="9 12 11 14 15 10" />
+    </svg>
+  ),
+  graduation: (
+    <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path d="M22 10l-10-5L2 10l10 5 10-5z" />
+      <path d="M6 12v5c0 2 6 3 6 3s6-1 6-3v-5" />
+      <line x1="22" y1="10" x2="22" y2="16" />
+    </svg>
+  ),
+}
 
 export default function ServiceGrid() {
   const containerRef = useRef<HTMLDivElement>(null!)
@@ -69,7 +102,7 @@ export default function ServiceGrid() {
   return (
     <section ref={containerRef} className="py-24 px-6 max-w-7xl mx-auto">
       <div className="mb-16">
-        <h2 className="text-4xl md:text-6xl font-bold uppercase mb-4">Consulting Pillars</h2>
+        <h2 className="text-4xl md:text-6xl font-bold uppercase mb-4">Core Services</h2>
         <div className="h-1 w-24 bg-neon-lime"></div>
       </div>
 
@@ -82,7 +115,7 @@ export default function ServiceGrid() {
             onMouseLeave={handleMouseLeave}
           >
             <div className="glitch-overlay absolute inset-0 bg-white opacity-0 pointer-events-none transition-opacity duration-300"></div>
-            <div className="text-4xl mb-6">{pillar.icon}</div>
+            <div className="text-neon-lime mb-6">{iconMap[pillar.icon]}</div>
             <h3 className="text-2xl font-bold mb-4 group-hover:text-neon-lime transition-colors">
               {pillar.title}
             </h3>
