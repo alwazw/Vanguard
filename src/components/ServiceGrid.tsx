@@ -10,28 +10,28 @@ const pillars = [
     title: 'Converged Penetration Testing',
     description: 'Advanced physical-cyber infiltration combining OSINT, drone reconnaissance, RFID cloning, hardware implants, and lateral network movement to identify vulnerabilities before adversaries do.',
     icon: 'target',
-    size: 'col-span-12 md:col-span-8',
+    desktopCols: 8,
   },
   {
     id: 2,
     title: 'AI-Driven Red Teaming',
     description: 'Agentic AI orchestration executing cyber campaigns 108x faster than traditional methods with continuous closed-loop malware iteration.',
     icon: 'cpu',
-    size: 'col-span-12 md:col-span-4',
+    desktopCols: 4,
   },
   {
     id: 3,
     title: 'Remediation Deployment',
     description: 'Strategic guidance, managed vulnerability lifecycle, rapid response patch management, and incident recovery support.',
     icon: 'shield',
-    size: 'col-span-12 md:col-span-4',
+    desktopCols: 4,
   },
   {
     id: 4,
     title: 'Vanguard Training Academy',
     description: 'Four-tier certification from foundational hygiene to advanced drone ISR and autonomous AI agents. Reduces average breach cost by $232,000 with up to 427% ROI.',
     icon: 'graduation',
-    size: 'col-span-12 md:col-span-8',
+    desktopCols: 8,
   },
 ]
 
@@ -100,29 +100,29 @@ export default function ServiceGrid() {
   }
 
   return (
-    <section ref={containerRef} className="py-24 px-6 max-w-7xl mx-auto">
-      <div className="mb-16">
-        <h2 className="text-4xl md:text-6xl font-bold uppercase mb-4">Core Services</h2>
+    <section ref={containerRef} className="py-16 md:py-24 px-4 md:px-6 max-w-7xl mx-auto">
+      <div className="mb-10 md:mb-16">
+        <h2 className="text-3xl md:text-6xl font-bold uppercase mb-4">Core Services</h2>
         <div className="h-1 w-24 bg-neon-lime"></div>
       </div>
 
-      <div className="grid grid-cols-12 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6">
         {pillars.map((pillar) => (
           <div
             key={pillar.id}
-            className={`${pillar.size} pillar-card relative p-10 border border-white/10 bg-white/5 backdrop-blur-sm group overflow-hidden cursor-none`}
+            className={`col-span-1 ${pillar.desktopCols === 8 ? 'md:col-span-8' : 'md:col-span-4'} pillar-card relative p-6 md:p-10 border border-white/10 bg-white/5 backdrop-blur-sm group overflow-hidden cursor-none`}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
             <div className="glitch-overlay absolute inset-0 bg-white opacity-0 pointer-events-none transition-opacity duration-300"></div>
-            <div className="text-neon-lime mb-6">{iconMap[pillar.icon]}</div>
-            <h3 className="text-2xl font-bold mb-4 group-hover:text-neon-lime transition-colors">
+            <div className="text-neon-lime mb-4 md:mb-6">{iconMap[pillar.icon]}</div>
+            <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 group-hover:text-neon-lime transition-colors">
               {pillar.title}
             </h3>
-            <p className="text-gray-400 leading-relaxed">{pillar.description}</p>
+            <p className="text-gray-400 leading-relaxed text-sm md:text-base">{pillar.description}</p>
 
-            <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity">
-                <span className="text-neon-lime text-sm uppercase tracking-widest font-bold">Explore</span>
+            <div className="absolute bottom-4 md:bottom-6 right-4 md:right-6 opacity-0 group-hover:opacity-100 transition-opacity">
+                <span className="text-neon-lime text-xs md:text-sm uppercase tracking-widest font-bold">Explore</span>
             </div>
           </div>
         ))}
