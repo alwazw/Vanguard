@@ -14,28 +14,28 @@ const arsenalItems = [
     id: 1,
     name: 'Flipper Zero',
     description: 'Clones 125kHz badges, emulates IR signals, and enables Bluetooth spamming for physical access testing.',
-    color: '#B6FF3B',
+    color: '#00D4FF',
     type: 'flipper'
   },
   {
     id: 2,
     name: 'O.MG Cable',
     description: 'Remote keystroke injection and data exfiltration on plug-in. A Trojan Horse disguised as a standard USB cable.',
-    color: '#3B7BFF',
+    color: '#0066CC',
     type: 'cable'
   },
   {
     id: 3,
     name: 'WiFi Pineapple Mark VII',
     description: 'Industry-standard rogue access point for man-in-the-middle attacks and network penetration testing.',
-    color: '#FF3B7B',
+    color: '#FF4757',
     type: 'pineapple'
   },
   {
     id: 4,
     name: 'iCopy-XS',
     description: 'Decodes and replicates high-security badges for authorized physical penetration assessments.',
-    color: '#B6FF3B',
+    color: '#00D9A5',
     type: 'suite'
   },
 ]
@@ -53,11 +53,11 @@ function DeviceModel({ color, type }: { color: string, type: string }) {
             </RoundedBox>
             <mesh position={[0, 0, 0.26]}>
               <planeGeometry args={[1.2, 0.6]} />
-              <meshStandardMaterial color="#3B7BFF" emissive="#3B7BFF" emissiveIntensity={2} />
+              <meshStandardMaterial color="#0066CC" emissive="#0066CC" emissiveIntensity={2} />
             </mesh>
             <mesh position={[0.7, -0.2, 0.26]}>
               <circleGeometry args={[0.1, 32]} />
-              <meshStandardMaterial color="#B6FF3B" />
+              <meshStandardMaterial color="#00D4FF" />
             </mesh>
           </group>
         )}
@@ -68,7 +68,7 @@ function DeviceModel({ color, type }: { color: string, type: string }) {
             </TorusKnot>
             <mesh position={[1, 0, 0]} rotation={[0, Math.PI / 2, 0]}>
                 <boxGeometry args={[0.3, 0.3, 0.5]} />
-                <meshStandardMaterial color="#3B7BFF" />
+                <meshStandardMaterial color="#0066CC" />
             </mesh>
           </group>
         )}
@@ -130,7 +130,7 @@ export default function ArsenalGallery() {
   }, { scope: containerRef })
 
   return (
-    <section ref={containerRef} className="h-screen overflow-hidden bg-black py-20 px-6">
+    <section ref={containerRef} className="h-screen overflow-hidden bg-slate-950 py-20 px-6">
       <div className="absolute top-20 left-10 z-10">
         <h2 className="text-4xl md:text-6xl font-bold uppercase mb-4 tracking-tighter">The Modern Arsenal</h2>
         <div className="h-1 w-24 bg-neon-lime"></div>

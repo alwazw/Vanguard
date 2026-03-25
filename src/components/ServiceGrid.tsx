@@ -89,7 +89,7 @@ export default function ServiceGrid() {
     const card = e.currentTarget
     const glitch = card.querySelector('.glitch-overlay')
     gsap.to(glitch, { opacity: 0.1, duration: 0.1, repeat: 3, yoyo: true })
-    gsap.to(card, { borderColor: '#B6FF3B', duration: 0.3 })
+    gsap.to(card, { borderColor: '#00D4FF', duration: 0.3 })
   }
 
   const handleMouseLeave = (e: React.MouseEvent<HTMLDivElement>) => {

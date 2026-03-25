@@ -1,18 +1,30 @@
 @import "tailwindcss";
 
 @theme {
-  --color-neon-lime: #B6FF3B;
-  --color-deep-black: #000000;
-  --color-vanguard-blue: #3B7BFF;
+  /* Primary - Steel Cyan: Trust, security, technical precision */
+  --color-neon-lime: #00D4FF;
+  --color-deep-black: #0A0E14;
+  --color-vanguard-blue: #0066CC;
+  
+  /* Supporting palette */
+  --color-slate-950: #0F1419;
+  --color-slate-900: #1A1F26;
+  --color-slate-800: #2D3640;
+  --color-slate-600: #6B7A8F;
+  --color-slate-400: #9CA8B8;
+  --color-alert-red: #FF4757;
+  --color-success-teal: #00D9A5;
 
   --color-background: var(--color-deep-black);
-  --color-foreground: white;
+  --color-foreground: #F1F5F9;
 }
 
 :root {
-  --background: #000000;
-  --foreground: #ffffff;
-  --neon-lime: #B6FF3B;
+  --background: #0A0E14;
+  --foreground: #F1F5F9;
+  --neon-lime: #00D4FF;
+  --slate-900: #1A1F26;
+  --alert-red: #FF4757;
 }
 
 body {
@@ -22,15 +34,20 @@ body {
   overflow-x: hidden;
 }
 
-/* Custom Scrollbar for Neon Look */
+/* Custom Scrollbar - Refined */
 ::-webkit-scrollbar {
   width: 5px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #000;
+  background: #0F1419;
 }
 
 ::-webkit-scrollbar-thumb {
   background: var(--neon-lime);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00B8E0;
 }

@@ -10,21 +10,21 @@ const cases = [
     cost: '£300M',
     type: 'Pretexting / Social Engineering',
     description: 'Advanced social engineering campaign demonstrating why converged physical-cyber defenses are essential against sophisticated threat actors.',
-    color: '#B6FF3B'
+    color: '#00D4FF'
   },
   {
     title: 'Jaguar Land Rover',
     cost: '£1.98B',
     type: 'IT Network Ransomware',
     description: 'Estimated economic damage from ransomware attack exploiting vulnerabilities that converged security testing would have identified.',
-    color: '#3B7BFF'
+    color: '#0066CC'
   },
   {
     title: 'McDonald\'s Breach',
     cost: '64M RECORDS',
     type: 'Weak Default AI Credentials',
     description: 'Massive data exposure from default credentials on AI systems - precisely the vulnerability our penetration testing identifies.',
-    color: '#FF3B7B'
+    color: '#FF4757'
   }
 ]
 
@@ -46,7 +46,7 @@ export default function CaseStudies() {
   }, { scope: containerRef })
 
   return (
-    <section ref={containerRef} className="py-32 px-6 bg-black">
+    <section ref={containerRef} className="py-32 px-6 bg-slate-950">
       <div className="max-w-7xl mx-auto mb-20">
         <h2 className="text-4xl md:text-7xl font-bold uppercase mb-6 tracking-tighter">2025 Threat Landscape</h2>
         <p className="text-gray-500 text-lg max-w-2xl">Real-world economic impact of fragmented security strategies. Average US breach cost: $10M. Mid-market firm impact: up to $29M.</p>

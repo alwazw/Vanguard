@@ -14,7 +14,7 @@ export default function Home() {
       <ThreatTicker />
       <Hero />
       <CaseStudies />
-      <section className="h-screen bg-black flex items-center justify-center p-12">
+      <section className="h-screen bg-deep-black flex items-center justify-center p-12">
         <div className="max-w-4xl text-center">
             <h2 className="text-4xl md:text-6xl font-bold mb-8 uppercase tracking-tighter">The Collapse of the Perimeter</h2>
             <p className="text-xl text-gray-400 leading-relaxed max-w-2xl mx-auto">
