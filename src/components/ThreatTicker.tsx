@@ -18,7 +18,6 @@ export default function ThreatTicker() {
 
   useGSAP(() => {
     const list = tickerRef.current
-    const items = list.children
     const totalWidth = list.scrollWidth / 2
 
     gsap.to(list, {
@@ -30,17 +29,17 @@ export default function ThreatTicker() {
   }, { scope: tickerRef })
 
   return (
-    <div className="w-full bg-neon-lime py-2 overflow-hidden border-y border-black/20 flex items-center z-50 relative">
+    <div className="w-full bg-vanguard-red py-2 overflow-hidden border-y border-black/20 flex items-center z-50 relative">
       <div
         ref={tickerRef}
-        className="flex whitespace-nowrap gap-12 text-black font-black uppercase text-xs tracking-widest px-6"
+        className="flex whitespace-nowrap gap-12 text-white font-black uppercase text-xs tracking-widest px-6"
       >
         {[...threats, ...threats].map((threat, idx) => (
           <div key={idx} className="flex items-center gap-4">
             <span className="opacity-50">[ ALERT ]</span>
             <span>{threat.label}:</span>
-            <span className="bg-black text-neon-lime px-2 py-0.5">{threat.value}</span>
-            <span className="opacity-30">•</span>
+            <span className="bg-deep-black text-vanguard-red px-2 py-0.5">{threat.value}</span>
+            <span className="opacity-30">//</span>
           </div>
         ))}
       </div>

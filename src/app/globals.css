@@ -1,30 +1,37 @@
 @import "tailwindcss";
 
 @theme {
-  /* Primary - Steel Cyan: Trust, security, technical precision */
-  --color-neon-lime: #00D4FF;
-  --color-deep-black: #0A0E14;
-  --color-vanguard-blue: #0066CC;
+  /* Cyber-Noire Theme - Dark with Red/Amber accents */
+  --color-vanguard-red: #FF3B3B;
+  --color-vanguard-amber: #FF6B35;
+  --color-vanguard-gold: #FFB800;
+  --color-deep-black: #0A0A0F;
+  --color-noir-dark: #12121A;
+  --color-noir-medium: #1A1A24;
+  
+  /* Keep neon-lime as the primary accent (mapped to red now) */
+  --color-neon-lime: #FF3B3B;
   
   /* Supporting palette */
-  --color-slate-950: #0F1419;
-  --color-slate-900: #1A1F26;
-  --color-slate-800: #2D3640;
-  --color-slate-600: #6B7A8F;
-  --color-slate-400: #9CA8B8;
-  --color-alert-red: #FF4757;
-  --color-success-teal: #00D9A5;
+  --color-slate-950: #0F0F14;
+  --color-slate-900: #16161E;
+  --color-slate-800: #1E1E28;
+  --color-slate-700: #2A2A36;
+  --color-slate-600: #3A3A48;
+  --color-slate-400: #8A8A9A;
 
   --color-background: var(--color-deep-black);
-  --color-foreground: #F1F5F9;
+  --color-foreground: #F0F0F5;
 }
 
 :root {
-  --background: #0A0E14;
-  --foreground: #F1F5F9;
-  --neon-lime: #00D4FF;
-  --slate-900: #1A1F26;
-  --alert-red: #FF4757;
+  --background: #0A0A0F;
+  --foreground: #F0F0F5;
+  --neon-lime: #FF3B3B;
+  --vanguard-red: #FF3B3B;
+  --vanguard-amber: #FF6B35;
+  --vanguard-gold: #FFB800;
+  --slate-900: #16161E;
 }
 
 body {
@@ -34,20 +41,42 @@ body {
   overflow-x: hidden;
 }
 
-/* Custom Scrollbar - Refined */
+/* Circuit board background pattern */
+.circuit-bg {
+  background-image: 
+    linear-gradient(rgba(255, 59, 59, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 59, 59, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Hexagonal grid overlay */
+.hex-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23FF3B3B' fill-opacity='0.02'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Custom Scrollbar - Cyber Noire */
 ::-webkit-scrollbar {
   width: 5px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0F1419;
+  background: #0F0F14;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--neon-lime);
+  background: var(--vanguard-red);
   border-radius: 2px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #00B8E0;
+  background: var(--vanguard-amber);
+}
+
+/* Glow effects */
+.glow-red {
+  box-shadow: 0 0 20px rgba(255, 59, 59, 0.3);
+}
+
+.text-glow-red {
+  text-shadow: 0 0 20px rgba(255, 59, 59, 0.5);
 }
