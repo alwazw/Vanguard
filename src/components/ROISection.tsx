@@ -52,27 +52,27 @@ export default function ROISection() {
   }, [inView])
 
   return (
-    <section ref={containerRef} className="py-16 md:py-24 px-4 md:px-6 bg-noir-dark relative overflow-hidden">
-      <div className="absolute inset-0 hex-overlay opacity-20"></div>
-      
+    <section ref={containerRef} className="py-16 md:py-24 px-4 md:px-6 motherboard-bg relative overflow-hidden">
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-12 md:mb-16">
-          <div className="inline-block px-3 py-1 border border-vanguard-red/30 bg-vanguard-red/5 mb-4">
-            <span className="text-vanguard-red text-xs font-mono uppercase tracking-widest">Financial Analysis</span>
+          <div className="flex items-center justify-center gap-4 mb-4">
+            <div className="h-px w-8 md:w-16 accent-line"></div>
+            <span className="text-vanguard-orange text-xs font-mono uppercase tracking-widest">Financial Analysis</span>
+            <div className="h-px w-8 md:w-16 accent-line" style={{ transform: 'scaleX(-1)' }}></div>
           </div>
           <h2 className="text-3xl md:text-6xl font-bold uppercase mb-4 tracking-tighter">
-            The ROI of <span className="text-vanguard-red">Proactive Resilience</span>
+            The ROI of <span className="text-vanguard-orange">Proactive Resilience</span>
           </h2>
         </div>
 
         <div className="roi-content grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           {/* Cost of Inaction */}
-          <div className="p-6 md:p-10 border border-vanguard-red/50 bg-vanguard-red/10 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-vanguard-red/20 blur-3xl"></div>
-            <h3 className="text-lg md:text-xl font-bold mb-6 text-vanguard-red relative z-10">The Cost of Inaction</h3>
+          <div className="p-6 md:p-10 border border-vanguard-orange/40 bg-vanguard-orange/10 backdrop-blur-sm relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-vanguard-orange/20 blur-3xl"></div>
+            <h3 className="text-lg md:text-xl font-bold mb-6 text-vanguard-orange relative z-10">The Cost of Inaction</h3>
             
             <div className="relative z-10 mb-8">
-              <div className="text-5xl md:text-7xl font-black text-vanguard-red">
+              <div className="text-5xl md:text-7xl font-black text-vanguard-orange">
                 ${impactValue}M
               </div>
               <div className="text-sm text-slate-400 uppercase tracking-wider mt-2">
@@ -87,7 +87,7 @@ export default function ROISection() {
                 'Indirect costs: brand erosion, lost customer lifetime value',
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3">
-                  <svg className="w-5 h-5 text-vanguard-red flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <svg className="w-5 h-5 text-vanguard-orange flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                   </svg>
                   <span className="text-sm text-slate-300">{item}</span>
@@ -97,7 +97,7 @@ export default function ROISection() {
           </div>
 
           {/* Cost of Defense */}
-          <div className="p-6 md:p-10 border border-white/10 bg-slate-950/50 relative overflow-hidden">
+          <div className="p-6 md:p-10 border border-slate-700/50 bg-noir-dark/60 backdrop-blur-sm relative overflow-hidden">
             <div className="absolute top-0 right-0 w-32 h-32 bg-vanguard-gold/10 blur-3xl"></div>
             <h3 className="text-lg md:text-xl font-bold mb-6 text-vanguard-gold relative z-10">The Cost of Defense</h3>
             
@@ -129,12 +129,12 @@ export default function ROISection() {
         </div>
 
         {/* Visual Comparison Bar */}
-        <div className="mt-10 md:mt-16 p-6 md:p-8 border border-white/10 bg-slate-950/50">
+        <div className="mt-10 md:mt-16 p-6 md:p-8 border border-slate-700/50 bg-noir-dark/60 backdrop-blur-sm">
           <div className="flex flex-col md:flex-row items-center gap-6">
             <div className="flex-1 w-full">
               <div className="text-xs text-slate-500 uppercase tracking-wider mb-2">Potential Breach Impact</div>
-              <div className="h-8 bg-vanguard-red/20 border border-vanguard-red/30 relative overflow-hidden">
-                <div className="absolute inset-0 bg-vanguard-red" style={{ width: '100%' }}></div>
+              <div className="h-8 bg-vanguard-orange/20 border border-vanguard-orange/30 relative overflow-hidden">
+                <div className="absolute inset-0 bg-vanguard-orange" style={{ width: '100%' }}></div>
                 <span className="absolute right-2 top-1/2 -translate-y-1/2 text-xs font-bold text-white">$29M</span>
               </div>
             </div>

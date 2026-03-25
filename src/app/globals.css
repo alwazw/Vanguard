@@ -1,70 +1,114 @@
 @import "tailwindcss";
 
 @theme {
-  /* Cyber-Noire Theme - Dark with Red/Amber accents */
-  --color-vanguard-red: #FF3B3B;
-  --color-vanguard-amber: #FF6B35;
+  /* Cyber-Noire Theme - Matching PDF deck aesthetic */
+  --color-vanguard-orange: #FF6B35;
+  --color-vanguard-amber: #FF9500;
   --color-vanguard-gold: #FFB800;
-  --color-deep-black: #0A0A0F;
-  --color-noir-dark: #12121A;
-  --color-noir-medium: #1A1A24;
+  --color-deep-black: #080810;
+  --color-noir-dark: #0C0C14;
+  --color-noir-medium: #10101A;
   
-  /* Keep neon-lime as the primary accent (mapped to red now) */
-  --color-neon-lime: #FF3B3B;
+  /* Primary accent - Orange (from PDF hexagon edges) */
+  --color-neon-lime: #FF6B35;
   
   /* Supporting palette */
-  --color-slate-950: #0F0F14;
-  --color-slate-900: #16161E;
-  --color-slate-800: #1E1E28;
-  --color-slate-700: #2A2A36;
-  --color-slate-600: #3A3A48;
-  --color-slate-400: #8A8A9A;
+  --color-slate-950: #0A0A12;
+  --color-slate-900: #0E0E18;
+  --color-slate-800: #14141E;
+  --color-slate-700: #1A1A26;
+  --color-slate-600: #2A2A38;
+  --color-slate-500: #3A3A4A;
+  --color-slate-400: #6A6A7A;
+  --color-slate-300: #9A9AAA;
 
   --color-background: var(--color-deep-black);
-  --color-foreground: #F0F0F5;
+  --color-foreground: #E8E8F0;
 }
 
 :root {
-  --background: #0A0A0F;
-  --foreground: #F0F0F5;
-  --neon-lime: #FF3B3B;
-  --vanguard-red: #FF3B3B;
-  --vanguard-amber: #FF6B35;
+  --background: #080810;
+  --foreground: #E8E8F0;
+  --neon-lime: #FF6B35;
+  --vanguard-orange: #FF6B35;
+  --vanguard-amber: #FF9500;
   --vanguard-gold: #FFB800;
-  --slate-900: #16161E;
+  --noir-dark: #0C0C14;
+  --noir-medium: #10101A;
 }
 
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Arial', sans-serif;
   overflow-x: hidden;
 }
 
-/* Circuit board background pattern */
-.circuit-bg {
+/* Circuit Board Pattern - Subtle trace lines */
+.circuit-pattern {
+  position: relative;
+}
+
+.circuit-pattern::before {
+  content: '';
+  position: absolute;
+  inset: 0;
   background-image: 
-    linear-gradient(rgba(255, 59, 59, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 59, 59, 0.03) 1px, transparent 1px);
-  background-size: 50px 50px;
+    linear-gradient(90deg, rgba(255, 107, 53, 0.03) 1px, transparent 1px),
+    linear-gradient(rgba(255, 107, 53, 0.03) 1px, transparent 1px),
+    radial-gradient(circle at 25px 25px, rgba(255, 107, 53, 0.05) 2px, transparent 2px);
+  background-size: 50px 50px, 50px 50px, 50px 50px;
+  pointer-events: none;
 }
 
-/* Hexagonal grid overlay */
-.hex-overlay {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23FF3B3B' fill-opacity='0.02'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+/* Hexagonal Grid Overlay - Like PDF background */
+.hex-grid {
+  position: relative;
 }
 
-/* Custom Scrollbar - Cyber Noire */
+.hex-grid::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100' viewBox='0 0 56 100'%3E%3Cpath d='M28 66L0 50L0 16L28 0L56 16L56 50L28 66L28 100' fill='none' stroke='rgba(255,107,53,0.08)' stroke-width='1'/%3E%3Cpath d='M28 0L28 34L0 50L0 84L28 100L56 84L56 50L28 34' fill='none' stroke='rgba(255,107,53,0.04)' stroke-width='0.5'/%3E%3C/svg%3E");
+  background-size: 56px 100px;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+/* Motherboard Texture Background */
+.motherboard-bg {
+  background-color: var(--noir-dark);
+  background-image: 
+    linear-gradient(90deg, transparent 49.5%, rgba(255, 107, 53, 0.04) 49.5%, rgba(255, 107, 53, 0.04) 50.5%, transparent 50.5%),
+    linear-gradient(transparent 49.5%, rgba(255, 107, 53, 0.04) 49.5%, rgba(255, 107, 53, 0.04) 50.5%, transparent 50.5%),
+    radial-gradient(circle at center, rgba(255, 107, 53, 0.02) 0%, transparent 70%);
+  background-size: 100px 100px, 100px 100px, 100% 100%;
+}
+
+/* Card backgrounds - Translucent with blur, no solid black */
+.card-noir {
+  background: linear-gradient(135deg, rgba(16, 16, 26, 0.6) 0%, rgba(12, 12, 20, 0.8) 100%);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 107, 53, 0.1);
+}
+
+.card-noir:hover {
+  border-color: rgba(255, 107, 53, 0.3);
+  box-shadow: 0 0 30px rgba(255, 107, 53, 0.1);
+}
+
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 4px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0F0F14;
+  background: #0A0A12;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--vanguard-red);
+  background: var(--vanguard-orange);
   border-radius: 2px;
 }
 
@@ -73,10 +117,36 @@ body {
 }
 
 /* Glow effects */
-.glow-red {
-  box-shadow: 0 0 20px rgba(255, 59, 59, 0.3);
+.glow-orange {
+  box-shadow: 0 0 30px rgba(255, 107, 53, 0.4), 0 0 60px rgba(255, 107, 53, 0.2);
 }
 
-.text-glow-red {
-  text-shadow: 0 0 20px rgba(255, 59, 59, 0.5);
+.text-glow {
+  text-shadow: 0 0 20px rgba(255, 107, 53, 0.6), 0 0 40px rgba(255, 107, 53, 0.3);
+}
+
+/* Accent line - Orange gradient */
+.accent-line {
+  background: linear-gradient(90deg, var(--vanguard-orange), var(--vanguard-amber), transparent);
+}
+
+/* Section divider with circuit trace */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.3), transparent);
+}
+
+/* Animated scan line effect */
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+.scanline::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.5), transparent);
+  animation: scanline 8s linear infinite;
 }

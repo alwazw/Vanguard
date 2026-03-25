@@ -68,14 +68,16 @@ export default function DeploymentTiers() {
   }, { scope: containerRef })
 
   return (
-    <section ref={containerRef} className="py-16 md:py-24 px-4 md:px-6 bg-deep-black">
-      <div className="max-w-7xl mx-auto">
+    <section ref={containerRef} className="py-16 md:py-24 px-4 md:px-6 circuit-pattern relative">
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-12 md:mb-16">
-          <div className="inline-block px-3 py-1 border border-vanguard-red/30 bg-vanguard-red/5 mb-4">
-            <span className="text-vanguard-red text-xs font-mono uppercase tracking-widest">Engagement Models</span>
+          <div className="flex items-center justify-center gap-4 mb-4">
+            <div className="h-px w-8 md:w-16 accent-line"></div>
+            <span className="text-vanguard-orange text-xs font-mono uppercase tracking-widest">Engagement Models</span>
+            <div className="h-px w-8 md:w-16 accent-line" style={{ transform: 'scaleX(-1)' }}></div>
           </div>
           <h2 className="text-3xl md:text-6xl font-bold uppercase mb-4 tracking-tighter">
-            Modular <span className="text-vanguard-red">Deployment</span>
+            Modular <span className="text-vanguard-orange">Deployment</span>
           </h2>
           <p className="text-slate-400 text-sm md:text-lg max-w-2xl mx-auto">
             Choose the engagement level that aligns with your risk profile and budget
@@ -86,10 +88,10 @@ export default function DeploymentTiers() {
           {tiers.map((tier) => (
             <div 
               key={tier.id}
-              className={`pricing-card relative border ${tier.highlight ? 'border-vanguard-red bg-vanguard-red/5' : 'border-white/10 bg-noir-dark'} p-6 md:p-8 flex flex-col`}
+              className={`pricing-card relative border backdrop-blur-sm ${tier.highlight ? 'border-vanguard-orange bg-vanguard-orange/10' : 'border-slate-700/50 bg-noir-dark/60'} p-6 md:p-8 flex flex-col hover:border-vanguard-orange/50 transition-all`}
             >
               {tier.highlight && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-vanguard-red text-white text-xs font-bold uppercase">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-vanguard-orange text-white text-xs font-bold uppercase">
                   Most Popular
                 </div>
               )}
@@ -100,7 +102,7 @@ export default function DeploymentTiers() {
                 </div>
                 <h3 className="text-lg md:text-xl font-bold mb-2">{tier.name}</h3>
                 <div className="flex items-baseline gap-2">
-                  <span className="text-2xl md:text-4xl font-black text-vanguard-red">{tier.price}</span>
+                  <span className="text-2xl md:text-4xl font-black text-vanguard-orange">{tier.price}</span>
                   <span className="text-xs text-slate-500 uppercase">{tier.type}</span>
                 </div>
               </div>
@@ -108,7 +110,7 @@ export default function DeploymentTiers() {
               <div className="flex-1 space-y-3 mb-6">
                 {tier.features.map((feature) => (
                   <div key={feature} className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-vanguard-red flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <svg className="w-5 h-5 text-vanguard-orange flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
                     <span className="text-sm text-slate-400">{feature}</span>
@@ -119,7 +121,7 @@ export default function DeploymentTiers() {
               <button 
                 className={`w-full py-3 md:py-4 font-bold uppercase tracking-widest text-sm transition-all ${
                   tier.highlight 
-                    ? 'bg-vanguard-red text-white hover:bg-vanguard-amber' 
+                    ? 'bg-vanguard-orange text-white hover:bg-vanguard-amber' 
                     : 'border border-white/30 text-white hover:bg-white hover:text-deep-black'
                 }`}
               >
@@ -131,7 +133,7 @@ export default function DeploymentTiers() {
 
         {/* Boutique Advantage */}
         <div className="mt-12 md:mt-20 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-          <div className="p-6 md:p-8 border border-white/10 bg-noir-dark">
+          <div className="p-6 md:p-8 border border-slate-700/50 bg-noir-dark/60 backdrop-blur-sm">
             <h3 className="text-lg md:text-xl font-bold mb-4 text-vanguard-amber">The Big 4 Legacy</h3>
             <ul className="space-y-3">
               {['Layered, pyramid junior staffing', 'Structured, rigid program management', 'Static automated scanners', 'Scale and compliance focus'].map((item) => (
@@ -142,12 +144,12 @@ export default function DeploymentTiers() {
               ))}
             </ul>
           </div>
-          <div className="p-6 md:p-8 border border-vanguard-red/30 bg-vanguard-red/5">
-            <h3 className="text-lg md:text-xl font-bold mb-4 text-vanguard-red">The Vanguard Approach</h3>
+          <div className="p-6 md:p-8 border border-vanguard-orange/40 bg-vanguard-orange/10 backdrop-blur-sm">
+            <h3 className="text-lg md:text-xl font-bold mb-4 text-vanguard-orange">The Vanguard Approach</h3>
             <ul className="space-y-3">
               {['Senior-led, direct access', 'Real-time Time-to-Insight', 'Agentic AI & Edge Robotics', 'Strategic depth & risk mitigation'].map((item) => (
                 <li key={item} className="flex items-start gap-3">
-                  <svg className="w-5 h-5 text-vanguard-red flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <svg className="w-5 h-5 text-vanguard-orange flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                   </svg>
                   <span className="text-sm text-slate-300">{item}</span>
