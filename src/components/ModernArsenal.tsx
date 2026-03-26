@@ -81,8 +81,8 @@ export default function ModernArsenal() {
               The Modern <span className="text-vanguard-orange">Arsenal</span>
             </h2>
             <p className="text-slate-400 text-sm md:text-base mb-8 leading-relaxed">
-              The &quot;WOW factor&quot; is physically embodied in specialized hardware tools that 
-              demonstrate the fragility of modern access controls and hardware interfaces.
+              Specialized penetration testing hardware demonstrates the fragility of modern 
+              access controls and hardware interfaces that most organizations overlook.
             </p>
 
             <div className="space-y-3">
