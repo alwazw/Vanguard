@@ -124,8 +124,8 @@ export default function TacticalOperations() {
           ))}
         </div>
 
-        <div className="h-[250px] md:h-[400px] lg:sticky lg:top-20">
-          <div className="relative w-full h-full bg-noir-medium/40 border border-vanguard-orange/20 backdrop-blur-sm overflow-hidden">
+        <div className="lg:sticky lg:top-20">
+          <div className="relative h-[250px] md:h-[400px] w-full bg-noir-medium/40 border border-vanguard-orange/20 backdrop-blur-sm overflow-hidden">
             <div className="absolute top-4 left-4 w-6 h-6 border-l border-t border-vanguard-orange/50 z-10"></div>
             <div className="absolute top-4 right-4 w-6 h-6 border-r border-t border-vanguard-orange/50 z-10"></div>
             <div className="absolute bottom-4 left-4 w-6 h-6 border-l border-b border-vanguard-orange/50 z-10"></div>

@@ -9,7 +9,7 @@ import ROISection from "@/components/ROISection";
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-noir-dark">
       <NetworkTopology />
       <Hero />
       <ThreatLandscape />

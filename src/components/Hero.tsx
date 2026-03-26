@@ -77,9 +77,9 @@ export default function Hero() {
         ref={container}
         className="relative min-h-[100svh] flex flex-col items-center justify-center px-4 md:px-6 py-12 md:py-0 overflow-hidden"
     >
-      {/* Video Background */}
-      <div className="absolute inset-0 z-0">
-        {isMounted && (
+      {/* Video Background - Client Only */}
+      {isMounted ? (
+        <div className="absolute inset-0 z-0">
           <video
             autoPlay
             muted
@@ -89,12 +89,14 @@ export default function Hero() {
           >
             <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/videoplayback%20%282%29-oo6AlnzQUROPslUGA0j946qSDs9Elr.mp4" type="video/mp4" />
           </video>
-        )}
-        {/* Dark overlay for readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-noir-dark/80 via-noir-dark/70 to-noir-dark/90"></div>
-        {/* Subtle hex pattern overlay */}
-        <div className="absolute inset-0 hex-grid opacity-30"></div>
-      </div>
+          <div className="absolute inset-0 bg-gradient-to-b from-noir-dark/80 via-noir-dark/70 to-noir-dark/90"></div>
+          <div className="absolute inset-0 hex-grid opacity-30"></div>
+        </div>
+      ) : (
+        <div className="absolute inset-0 z-0 bg-noir-dark">
+          <div className="absolute inset-0 hex-grid opacity-30"></div>
+        </div>
+      )}
 
       {/* Corner brackets - Orange accent */}
       <div className="absolute top-6 md:top-8 left-6 md:left-8 w-8 md:w-12 h-8 md:h-12 border-l-2 border-t-2 border-vanguard-orange/60 z-10"></div>
