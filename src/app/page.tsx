@@ -36,7 +36,7 @@ export default function Home() {
                 THE <span className="text-tactical-red">VANGUARD</span> PROTOCOL
             </div>
             <div className="text-gray-600 text-[10px] font-mono uppercase tracking-[0.4em] leading-loose text-right">
-                © 2025 ALL RIGHTS RESERVED.<br />
+                © 2026 ALL RIGHTS RESERVED.<br />
                 HOLISTIC SECURITY CONVERGENCE.<br />
                 SEC_LEVEL: ALPHA_CLEARANCE
             </div>
