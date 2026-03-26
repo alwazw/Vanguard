@@ -2,7 +2,7 @@
 
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
-import { useRef } from 'react'
+import { useRef, useState, useEffect } from 'react'
 
 export default function Hero() {
   const container = useRef<HTMLDivElement>(null!)
@@ -10,6 +10,11 @@ export default function Hero() {
   const subtitleRef = useRef<HTMLParagraphElement>(null!)
   const ctaRef = useRef<HTMLDivElement>(null!)
   const badgeRef = useRef<HTMLDivElement>(null!)
+  const [isMounted, setIsMounted] = useState(false)
+
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
 
   useGSAP(() => {
     const tl = gsap.timeline({ defaults: { ease: 'power4.out' } })
@@ -73,17 +78,18 @@ export default function Hero() {
         className="relative min-h-[100svh] flex flex-col items-center justify-center px-4 md:px-6 py-12 md:py-0 overflow-hidden"
     >
       {/* Video Background */}
-      <div className="absolute inset-0 z-0" suppressHydrationWarning>
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          suppressHydrationWarning
-          className="absolute w-full h-full object-cover"
-        >
-          <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/videoplayback%20%282%29-oo6AlnzQUROPslUGA0j946qSDs9Elr.mp4" type="video/mp4" />
-        </video>
+      <div className="absolute inset-0 z-0">
+        {isMounted && (
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute w-full h-full object-cover"
+          >
+            <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/videoplayback%20%282%29-oo6AlnzQUROPslUGA0j946qSDs9Elr.mp4" type="video/mp4" />
+          </video>
+        )}
         {/* Dark overlay for readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-noir-dark/80 via-noir-dark/70 to-noir-dark/90"></div>
         {/* Subtle hex pattern overlay */}
@@ -118,10 +124,10 @@ export default function Hero() {
           Converging advanced penetration testing, AI-driven red teaming, and elite training.
         </p>
         <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 justify-center px-4">
-          <button className="px-6 md:px-8 py-3 md:py-4 bg-vanguard-orange text-white font-bold uppercase tracking-widest text-xs md:text-sm hover:bg-vanguard-amber transition-colors cursor-none glow-orange">
+          <button className="px-6 md:px-8 py-3 md:py-4 bg-vanguard-orange text-white font-bold uppercase tracking-widest text-xs md:text-sm hover:bg-vanguard-amber transition-colors glow-orange">
             Initiate Protocol
           </button>
-          <button className="px-6 md:px-8 py-3 md:py-4 border border-slate-500 text-white font-bold uppercase tracking-widest text-xs md:text-sm hover:border-vanguard-orange hover:text-vanguard-orange transition-all cursor-none">
+          <button className="px-6 md:px-8 py-3 md:py-4 border border-slate-500 text-white font-bold uppercase tracking-widest text-xs md:text-sm hover:border-vanguard-orange hover:text-vanguard-orange transition-all">
             View Services
           </button>
         </div>

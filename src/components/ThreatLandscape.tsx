@@ -77,17 +77,18 @@ export default function ThreatLandscape() {
   return (
     <section ref={containerRef} className="py-10 md:py-20 px-4 md:px-6 motherboard-bg relative overflow-hidden">
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center mb-8 md:mb-12">
+        <div className="text-center mb-6 md:mb-10">
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="h-px w-8 md:w-16 accent-line"></div>
-            <span className="text-vanguard-orange text-xs font-mono uppercase tracking-widest">Asymmetric Threat Analysis</span>
+            <span className="text-vanguard-orange text-xs font-mono uppercase tracking-widest">Multi-Domain Framework</span>
             <div className="h-px w-8 md:w-16 accent-line" style={{ transform: 'scaleX(-1)' }}></div>
           </div>
-          <h2 className="text-3xl md:text-6xl font-bold uppercase mb-4 tracking-tighter">
-            2025 Threat <span className="text-vanguard-orange">Landscape</span>
+          <h2 className="text-2xl md:text-5xl font-bold uppercase mb-4 tracking-tighter">
+            The Collapse of the <span className="text-vanguard-orange">Perimeter</span>
           </h2>
-          <p className="text-slate-400 text-sm md:text-lg max-w-2xl mx-auto">
-            Real-world economic impact of fragmented security strategies
+          <p className="text-slate-400 text-sm md:text-base max-w-3xl mx-auto mb-6">
+            The distinction between a physical breach and a cyber catastrophe is functionally 
+            non-existent. 60% of enterprises will converge physical and cyber security operations by 2027.
           </p>
         </div>
 

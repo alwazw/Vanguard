@@ -93,7 +93,7 @@ export default function CoreServices() {
         </div>
 
         {/* Service Content */}
-        <div className="bg-noir-medium/50 border border-vanguard-orange/10 backdrop-blur-sm p-6 md:p-10">
+        <div className="bg-noir-medium/50 border border-vanguard-orange/10 backdrop-blur-sm p-4 md:p-8">
           <h3 className="text-xl md:text-3xl font-bold mb-6 md:mb-8 text-center">
             {currentService?.title}
           </h3>
