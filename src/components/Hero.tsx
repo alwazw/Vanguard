@@ -70,13 +70,30 @@ export default function Hero() {
   return (
     <section
         ref={container}
-        className="relative h-screen flex flex-col items-center justify-center px-6 overflow-hidden hex-grid"
+        className="relative h-screen flex flex-col items-center justify-center px-6 overflow-hidden"
     >
+      {/* Video Background */}
+      <div className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute w-full h-full object-cover"
+        >
+          <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/videoplayback%20%282%29-oo6AlnzQUROPslUGA0j946qSDs9Elr.mp4" type="video/mp4" />
+        </video>
+        {/* Dark overlay for readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-noir-dark/80 via-noir-dark/70 to-noir-dark/90"></div>
+        {/* Subtle hex pattern overlay */}
+        <div className="absolute inset-0 hex-grid opacity-30"></div>
+      </div>
+
       {/* Corner brackets - Orange accent */}
-      <div className="absolute top-6 md:top-8 left-6 md:left-8 w-8 md:w-12 h-8 md:h-12 border-l-2 border-t-2 border-vanguard-orange/60"></div>
-      <div className="absolute top-6 md:top-8 right-6 md:right-8 w-8 md:w-12 h-8 md:h-12 border-r-2 border-t-2 border-vanguard-orange/60"></div>
-      <div className="absolute bottom-6 md:bottom-8 left-6 md:left-8 w-8 md:w-12 h-8 md:h-12 border-l-2 border-b-2 border-vanguard-orange/60"></div>
-      <div className="absolute bottom-6 md:bottom-8 right-6 md:right-8 w-8 md:w-12 h-8 md:h-12 border-r-2 border-b-2 border-vanguard-orange/60"></div>
+      <div className="absolute top-6 md:top-8 left-6 md:left-8 w-8 md:w-12 h-8 md:h-12 border-l-2 border-t-2 border-vanguard-orange/60 z-10"></div>
+      <div className="absolute top-6 md:top-8 right-6 md:right-8 w-8 md:w-12 h-8 md:h-12 border-r-2 border-t-2 border-vanguard-orange/60 z-10"></div>
+      <div className="absolute bottom-6 md:bottom-8 left-6 md:left-8 w-8 md:w-12 h-8 md:h-12 border-l-2 border-b-2 border-vanguard-orange/60 z-10"></div>
+      <div className="absolute bottom-6 md:bottom-8 right-6 md:right-8 w-8 md:w-12 h-8 md:h-12 border-r-2 border-b-2 border-vanguard-orange/60 z-10"></div>
       
       <div className="max-w-7xl w-full text-center z-10">
         <div ref={badgeRef} className="inline-block px-4 py-2 border border-vanguard-orange/40 bg-vanguard-orange/5 backdrop-blur-sm mb-6">
