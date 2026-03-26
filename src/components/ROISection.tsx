@@ -52,7 +52,7 @@ export default function ROISection() {
   }, [inView])
 
   return (
-    <section ref={containerRef} className="py-10 md:py-20 px-4 md:px-6 motherboard-bg relative overflow-hidden">
+    <section ref={containerRef} className="py-10 md:py-20 px-4 md:px-6 hex-grid relative overflow-hidden">
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-8 md:mb-12">
           <div className="flex items-center justify-center gap-4 mb-4">

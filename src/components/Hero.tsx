@@ -79,23 +79,20 @@ export default function Hero() {
     >
       {/* Video Background - Client Only */}
       {isMounted ? (
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 bg-noir-dark">
           <video
             autoPlay
             muted
             loop
             playsInline
-            className="absolute w-full h-full object-cover"
+            className="absolute w-full h-full object-cover md:object-contain md:scale-110"
           >
             <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/videoplayback%20%282%29-oo6AlnzQUROPslUGA0j946qSDs9Elr.mp4" type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-gradient-to-b from-noir-dark/80 via-noir-dark/70 to-noir-dark/90"></div>
-          <div className="absolute inset-0 hex-grid opacity-30"></div>
+          <div className="absolute inset-0 bg-noir-dark/60"></div>
         </div>
       ) : (
-        <div className="absolute inset-0 z-0 bg-noir-dark">
-          <div className="absolute inset-0 hex-grid opacity-30"></div>
-        </div>
+        <div className="absolute inset-0 z-0 bg-noir-dark"></div>
       )}
 
       {/* Corner brackets - Orange accent */}

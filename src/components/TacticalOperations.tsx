@@ -64,7 +64,7 @@ export default function TacticalOperations() {
   }, { scope: containerRef })
 
   return (
-    <section ref={containerRef} className="py-10 md:py-20 px-4 md:px-6 motherboard-bg relative">
+    <section ref={containerRef} className="py-10 md:py-20 px-4 md:px-6 relative bg-noir-medium/30">
       <div className="max-w-7xl mx-auto mb-8 md:mb-12">
         <div className="flex items-center gap-4 mb-4">
           <div className="h-px flex-1 max-w-[100px] accent-line"></div>
@@ -124,31 +124,29 @@ export default function TacticalOperations() {
           ))}
         </div>
 
-        <div className="lg:sticky lg:top-20">
-          <div className="relative h-[250px] md:h-[400px] w-full bg-noir-medium/40 border border-vanguard-orange/20 backdrop-blur-sm overflow-hidden">
-            <div className="absolute top-4 left-4 w-6 h-6 border-l border-t border-vanguard-orange/50 z-10"></div>
-            <div className="absolute top-4 right-4 w-6 h-6 border-r border-t border-vanguard-orange/50 z-10"></div>
-            <div className="absolute bottom-4 left-4 w-6 h-6 border-l border-b border-vanguard-orange/50 z-10"></div>
-            <div className="absolute bottom-4 right-4 w-6 h-6 border-r border-b border-vanguard-orange/50 z-10"></div>
+        <div className="relative h-[250px] md:h-[400px] w-full bg-noir-medium/40 border border-vanguard-orange/20 backdrop-blur-sm overflow-hidden">
+          <div className="absolute top-4 left-4 w-6 h-6 border-l border-t border-vanguard-orange/50 z-10"></div>
+          <div className="absolute top-4 right-4 w-6 h-6 border-r border-t border-vanguard-orange/50 z-10"></div>
+          <div className="absolute bottom-4 left-4 w-6 h-6 border-l border-b border-vanguard-orange/50 z-10"></div>
+          <div className="absolute bottom-4 right-4 w-6 h-6 border-r border-b border-vanguard-orange/50 z-10"></div>
+          
+          <Image
+            src={operations[activeOp].image}
+            alt={operations[activeOp].title}
+            fill
+            className="object-cover opacity-70"
+          />
             
-            <Image
-              src={operations[activeOp].image}
-              alt={operations[activeOp].title}
-              fill
-              className="object-cover opacity-70"
-            />
+          <div className="absolute inset-0 bg-gradient-to-t from-noir-dark via-transparent to-transparent"></div>
             
-            <div className="absolute inset-0 bg-gradient-to-t from-noir-dark via-transparent to-transparent"></div>
-            
-            <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6">
-              <div className="flex items-center gap-2 mb-2">
-                <div className="w-2 h-2 bg-vanguard-orange rounded-full animate-pulse"></div>
-                <span className="text-vanguard-orange text-xs font-mono uppercase">LIVE FEED</span>
-              </div>
-              <div className="font-mono text-xs text-slate-400">
-                <span className="text-vanguard-amber">&gt;</span> {operations[activeOp].subtitle.toLowerCase().replace(/ /g, '_')}
-                <span className="animate-pulse">_</span>
-              </div>
+          <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6">
+            <div className="flex items-center gap-2 mb-2">
+              <div className="w-2 h-2 bg-vanguard-orange rounded-full animate-pulse"></div>
+              <span className="text-vanguard-orange text-xs font-mono uppercase">LIVE FEED</span>
+            </div>
+            <div className="font-mono text-xs text-slate-400">
+              <span className="text-vanguard-amber">&gt;</span> {operations[activeOp].subtitle.toLowerCase().replace(/ /g, '_')}
+              <span className="animate-pulse">_</span>
             </div>
           </div>
         </div>
