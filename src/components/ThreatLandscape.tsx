@@ -75,9 +75,9 @@ export default function ThreatLandscape() {
   }, { scope: containerRef })
 
   return (
-    <section ref={containerRef} className="py-16 md:py-24 px-4 md:px-6 motherboard-bg relative overflow-hidden">
+    <section ref={containerRef} className="py-10 md:py-20 px-4 md:px-6 motherboard-bg relative overflow-hidden">
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center mb-12 md:mb-16">
+        <div className="text-center mb-8 md:mb-12">
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="h-px w-8 md:w-16 accent-line"></div>
             <span className="text-vanguard-orange text-xs font-mono uppercase tracking-widest">Asymmetric Threat Analysis</span>
@@ -92,7 +92,7 @@ export default function ThreatLandscape() {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-3 gap-4 md:gap-8 mb-12 md:mb-16">
+        <div className="grid grid-cols-3 gap-3 md:gap-6 mb-8 md:mb-10">
           {stats.map((stat) => (
             <div key={stat.label} className="stat-item text-center p-4 md:p-6 border border-vanguard-orange/20 bg-noir-medium/40 backdrop-blur-sm">
               <div className="text-2xl md:text-5xl font-black text-vanguard-orange text-glow mb-2">{stat.value}</div>

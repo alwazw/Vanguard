@@ -64,8 +64,8 @@ export default function TacticalOperations() {
   }, { scope: containerRef })
 
   return (
-    <section ref={containerRef} className="py-20 md:py-32 px-4 md:px-8 motherboard-bg relative">
-      <div className="max-w-7xl mx-auto mb-12 md:mb-20">
+    <section ref={containerRef} className="py-10 md:py-20 px-4 md:px-6 motherboard-bg relative">
+      <div className="max-w-7xl mx-auto mb-8 md:mb-12">
         <div className="flex items-center gap-4 mb-4">
           <div className="h-px flex-1 max-w-[100px] accent-line"></div>
           <span className="text-vanguard-orange text-xs font-mono uppercase tracking-widest">Tactical Capabilities</span>
@@ -124,8 +124,8 @@ export default function TacticalOperations() {
           ))}
         </div>
 
-        <div className="relative h-[300px] md:h-[500px] lg:h-auto">
-          <div className="sticky top-20 h-[300px] md:h-[500px] bg-noir-medium/40 border border-vanguard-orange/20 backdrop-blur-sm overflow-hidden">
+        <div className="h-[250px] md:h-[400px] lg:sticky lg:top-20">
+          <div className="relative h-full bg-noir-medium/40 border border-vanguard-orange/20 backdrop-blur-sm overflow-hidden">
             <div className="absolute top-4 left-4 w-6 h-6 border-l border-t border-vanguard-orange/50 z-10"></div>
             <div className="absolute top-4 right-4 w-6 h-6 border-r border-t border-vanguard-orange/50 z-10"></div>
             <div className="absolute bottom-4 left-4 w-6 h-6 border-l border-b border-vanguard-orange/50 z-10"></div>

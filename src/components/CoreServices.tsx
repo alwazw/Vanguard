@@ -62,9 +62,9 @@ export default function CoreServices() {
   const currentService = services.find(s => s.id === activeService)
 
   return (
-    <section ref={containerRef} className="py-16 md:py-24 px-4 md:px-6 hex-grid relative">
+    <section ref={containerRef} className="py-10 md:py-20 px-4 md:px-6 hex-grid relative">
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center mb-10 md:mb-16">
+        <div className="text-center mb-6 md:mb-10">
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="h-px w-12 md:w-24 accent-line"></div>
             <span className="text-vanguard-orange text-xs font-mono uppercase tracking-widest">Service Architecture</span>
@@ -76,7 +76,7 @@ export default function CoreServices() {
         </div>
 
         {/* Service Tabs */}
-        <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-10">
+        <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-6">
           {services.map((service) => (
             <button
               key={service.id}

@@ -70,15 +70,16 @@ export default function Hero() {
   return (
     <section
         ref={container}
-        className="relative h-screen flex flex-col items-center justify-center px-6 overflow-hidden"
+        className="relative min-h-[100svh] flex flex-col items-center justify-center px-4 md:px-6 py-12 md:py-0 overflow-hidden"
     >
       {/* Video Background */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0" suppressHydrationWarning>
         <video
           autoPlay
           muted
           loop
           playsInline
+          suppressHydrationWarning
           className="absolute w-full h-full object-cover"
         >
           <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/videoplayback%20%282%29-oo6AlnzQUROPslUGA0j946qSDs9Elr.mp4" type="video/mp4" />

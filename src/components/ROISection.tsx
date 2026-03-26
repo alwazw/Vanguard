@@ -52,9 +52,9 @@ export default function ROISection() {
   }, [inView])
 
   return (
-    <section ref={containerRef} className="py-16 md:py-24 px-4 md:px-6 motherboard-bg relative overflow-hidden">
+    <section ref={containerRef} className="py-10 md:py-20 px-4 md:px-6 motherboard-bg relative overflow-hidden">
       <div className="max-w-6xl mx-auto relative z-10">
-        <div className="text-center mb-12 md:mb-16">
+        <div className="text-center mb-8 md:mb-12">
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="h-px w-8 md:w-16 accent-line"></div>
             <span className="text-vanguard-orange text-xs font-mono uppercase tracking-widest">Financial Analysis</span>
@@ -129,7 +129,7 @@ export default function ROISection() {
         </div>
 
         {/* Visual Comparison Bar */}
-        <div className="mt-10 md:mt-16 p-6 md:p-8 border border-slate-700/50 bg-noir-dark/60 backdrop-blur-sm">
+        <div className="mt-6 md:mt-10 p-4 md:p-6 border border-slate-700/50 bg-noir-dark/60 backdrop-blur-sm">
           <div className="flex flex-col md:flex-row items-center gap-6">
             <div className="flex-1 w-full">
               <div className="text-xs text-slate-500 uppercase tracking-wider mb-2">Potential Breach Impact</div>

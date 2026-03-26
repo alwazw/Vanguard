@@ -68,9 +68,9 @@ export default function DeploymentTiers() {
   }, { scope: containerRef })
 
   return (
-    <section ref={containerRef} className="py-16 md:py-24 px-4 md:px-6 circuit-pattern relative">
+    <section ref={containerRef} className="py-10 md:py-20 px-4 md:px-6 circuit-pattern relative">
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center mb-12 md:mb-16">
+        <div className="text-center mb-8 md:mb-12">
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="h-px w-8 md:w-16 accent-line"></div>
             <span className="text-vanguard-orange text-xs font-mono uppercase tracking-widest">Engagement Models</span>
@@ -132,7 +132,7 @@ export default function DeploymentTiers() {
         </div>
 
         {/* Boutique Advantage */}
-        <div className="mt-12 md:mt-20 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        <div className="mt-8 md:mt-12 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
           <div className="p-6 md:p-8 border border-slate-700/50 bg-noir-dark/60 backdrop-blur-sm">
             <h3 className="text-lg md:text-xl font-bold mb-4 text-vanguard-amber">The Big 4 Legacy</h3>
             <ul className="space-y-3">
