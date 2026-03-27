@@ -34,7 +34,7 @@ function PointsLayer() {
       <Points ref={ref} positions={positions} stride={3} frustumCulled={false}>
         <PointMaterial
           transparent
-          color="#B6FF3B"
+          color="#FF6B35"
           size={0.05}
           sizeAttenuation={true}
           depthWrite={false}
@@ -78,7 +78,7 @@ function LinesLayer() {
         <Line
           key={idx}
           points={[line.start, line.end]}
-          color="#B6FF3B"
+          color="#FF6B35"
           lineWidth={0.5}
           transparent
           opacity={0.15}
@@ -90,9 +90,9 @@ function LinesLayer() {
 
 export default function NetworkTopology() {
   return (
-    <div className="fixed inset-0 -z-10 bg-black">
+    <div className="fixed inset-0 -z-10 bg-deep-black">
       <Canvas camera={{ position: [0, 0, 5], fov: 60 }}>
-        <color attach="background" args={['#000000']} />
+        <color attach="background" args={['#080810']} />
         <ambientLight intensity={0.5} />
         <PointsLayer />
         <LinesLayer />

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
-import CustomCursor from "@/components/CustomCursor";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "The Vanguard Protocol | Holistic Cybersecurity Consultancy",
-  description: "Ultra-modern, motion-heavy digital experience for a holistic cybersecurity consultancy.",
+  title: "The Vanguard Protocol | Multi-Domain Security Validation",
+  description: "Advanced penetration testing of cyber and physical security. AI-driven remediation deployment. Elite security training. The traditional perimeter is obsolete.",
 };
 
 export default function RootLayout({
@@ -29,7 +28,6 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-deep-black text-white`}
       >
-        <CustomCursor />
         <SmoothScroll>
           {children}
         </SmoothScroll>
