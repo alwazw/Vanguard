@@ -47,11 +47,11 @@ export default function ROICalculator() {
   return (
     <section ref={containerRef} className="py-32 px-12 bg-[#080808] border-y border-white/5 relative overflow-hidden">
       {/* Background Scanning Line */}
-      <div className="absolute top-0 left-0 w-full h-[1px] bg-tactical-red/20 animate-[scan_8s_infinite_linear]" />
+      <div className="absolute top-0 left-0 w-full h-[1px] bg-neon-lime/20 animate-[scan_8s_infinite_linear]" />
 
       <div className="max-w-7xl mx-auto mb-24 grid grid-cols-1 md:grid-cols-2 items-end gap-12">
         <div>
-            <span className="text-tactical-red font-mono text-sm tracking-[0.4em] uppercase mb-4 block animate-pulse">Economic Forensics</span>
+            <span className="text-neon-lime font-mono text-sm tracking-[0.4em] uppercase mb-4 block animate-pulse">Economic Forensics</span>
             <h2 className="text-5xl md:text-8xl font-black uppercase tracking-tighter text-white">IMPACT_METRICS</h2>
         </div>
         <p className="text-gray-500 font-mono text-sm max-w-lg leading-relaxed uppercase tracking-wider mb-2">
@@ -64,28 +64,28 @@ export default function ROICalculator() {
         {metrics.map((metric, idx) => (
           <div
             key={metric.label}
-            className="p-12 border border-white/5 bg-deep-black hover:border-tactical-red transition-all duration-300 group relative overflow-hidden"
+            className="p-12 border border-white/5 bg-deep-black hover:border-neon-lime transition-all duration-300 group relative overflow-hidden"
           >
             <div className="absolute top-0 right-0 p-4 font-mono text-[8px] text-gray-800 pointer-events-none uppercase">
                 MT_ID: {idx + 101}
             </div>
 
-            <h3 className="text-gray-500 uppercase text-[10px] font-mono font-bold tracking-[0.3em] mb-10 block group-hover:text-tactical-red transition-colors">
+            <h3 className="text-gray-500 uppercase text-[10px] font-mono font-bold tracking-[0.3em] mb-10 block group-hover:text-neon-lime transition-colors">
               {metric.label}
             </h3>
             <div className="text-4xl md:text-6xl font-black text-white group-hover:text-white transition-colors tracking-tight">
               {formatValue(counts[idx], metric.prefix, metric.suffix)}
             </div>
 
-            <div className="mt-12 h-[2px] w-4 bg-tactical-red group-hover:w-full transition-all duration-700 ease-in-out"></div>
+            <div className="mt-12 h-[2px] w-4 bg-neon-lime group-hover:w-full transition-all duration-700 ease-in-out"></div>
           </div>
         ))}
       </div>
 
-      <div className="mt-32 max-w-7xl mx-auto p-1 border border-tactical-red/30 bg-tactical-red/5">
-          <div className="p-16 border border-tactical-red/50 bg-deep-black text-center relative overflow-hidden group">
+      <div className="mt-32 max-w-7xl mx-auto p-1 border border-neon-lime/30 bg-neon-lime/5">
+          <div className="p-16 border border-neon-lime/50 bg-deep-black text-center relative overflow-hidden group">
               {/* Scan Overlay */}
-              <div className="absolute inset-0 bg-tactical-red opacity-0 group-hover:opacity-[0.02] transition-opacity duration-300 pointer-events-none" />
+              <div className="absolute inset-0 bg-neon-lime opacity-0 group-hover:opacity-[0.02] transition-opacity duration-300 pointer-events-none" />
 
               <h2 className="text-4xl md:text-7xl font-black uppercase mb-8 tracking-tighter text-white">STOP_THE_HEMORRHAGE</h2>
               <p className="text-xl font-mono mb-12 max-w-3xl mx-auto text-gray-400 leading-snug uppercase tracking-wide">
@@ -94,7 +94,7 @@ export default function ROICalculator() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                  <Button size="lg" className="bg-tactical-red text-white hover:bg-white hover:text-black px-12 py-8 text-xl font-bold uppercase tracking-widest transition-all">
+                  <Button size="lg" className="bg-neon-lime text-white hover:bg-white hover:text-black px-12 py-8 text-xl font-bold uppercase tracking-widest transition-all">
                       Initiate Risk Assessment
                   </Button>
                   <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white hover:text-black px-12 py-8 text-xl font-bold uppercase tracking-widest transition-all">

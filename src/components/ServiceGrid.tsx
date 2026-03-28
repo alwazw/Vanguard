@@ -54,7 +54,7 @@ export default function ServiceGrid() {
 
   const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>) => {
     const card = e.currentTarget
-    gsap.to(card, { borderColor: '#E31C25', backgroundColor: 'rgba(227, 28, 37, 0.05)', duration: 0.3 })
+    gsap.to(card, { borderColor: '#B6FF3B', backgroundColor: 'rgba(182, 255, 59, 0.05)', duration: 0.3 })
     gsap.to(card.querySelector('.scanline'), { opacity: 1, duration: 0.2 })
   }
 
@@ -68,7 +68,7 @@ export default function ServiceGrid() {
     <section ref={containerRef} className="py-32 px-6 max-w-7xl mx-auto bg-deep-black">
       <div className="mb-20 flex items-end justify-between border-b border-white/10 pb-8">
         <div>
-            <span className="text-tactical-red font-mono text-sm tracking-widest uppercase mb-2 block">Operational Capabilities</span>
+            <span className="text-neon-lime font-mono text-sm tracking-widest uppercase mb-2 block">Operational Capabilities</span>
             <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter">Core Pillars</h2>
         </div>
         <div className="text-right hidden md:block">
@@ -85,11 +85,11 @@ export default function ServiceGrid() {
             onMouseLeave={handleMouseLeave}
           >
             {/* Scanline Effect on Hover */}
-            <div className="scanline absolute inset-0 bg-[linear-gradient(to_bottom,transparent_50%,rgba(227,28,37,0.05)_50%)] bg-[length:100%_4px] opacity-0 pointer-events-none" />
+            <div className="scanline absolute inset-0 bg-[linear-gradient(to_bottom,transparent_50%,rgba(182,255,59,0.05)_50%)] bg-[length:100%_4px] opacity-0 pointer-events-none" />
 
             <div className="flex justify-between items-start mb-12">
                 <span className="text-xs font-mono text-gray-500 tracking-[0.3em]">{pillar.code}</span>
-                <div className="w-2 h-2 bg-tactical-red opacity-20 group-hover:opacity-100 transition-opacity" />
+                <div className="w-2 h-2 bg-neon-lime opacity-20 group-hover:opacity-100 transition-opacity" />
             </div>
 
             <h3 className="text-3xl font-black mb-6 uppercase tracking-tight group-hover:text-white transition-colors">
@@ -98,12 +98,12 @@ export default function ServiceGrid() {
             <p className="text-gray-400 leading-relaxed font-mono text-sm max-w-md">{pillar.description}</p>
 
             <div className="mt-12 flex items-center gap-4 opacity-40 group-hover:opacity-100 transition-opacity">
-                <div className="h-[1px] w-8 bg-tactical-red" />
-                <span className="text-tactical-red text-xs uppercase tracking-widest font-bold">Details // Required</span>
+                <div className="h-[1px] w-8 bg-neon-lime" />
+                <span className="text-neon-lime text-xs uppercase tracking-widest font-bold">Details // Required</span>
             </div>
 
             {/* Corner Accent */}
-            <div className="absolute bottom-0 right-0 w-8 h-8 border-r border-b border-transparent group-hover:border-tactical-red transition-all duration-300" />
+            <div className="absolute bottom-0 right-0 w-8 h-8 border-r border-b border-transparent group-hover:border-neon-lime transition-all duration-300" />
           </div>
         ))}
       </div>

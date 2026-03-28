@@ -5,32 +5,32 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --color-tactical-red: #E31C25;
+  --color-neon-lime: #B6FF3B;
   --color-deep-black: #050505;
-  --color-tactical-gray: #1a1a1a;
+  --color-vanguard-blue: #3B7BFF;
 }
 
 :root {
-  --background: 0 0% 2%; /* #050505 approx */
+  --background: 0 0% 2%; /* #050505 */
   --foreground: 0 0% 96%; /* #F5F5F5 */
 
   --card: 0 0% 4%;
   --card-foreground: 0 0% 96%;
   --popover: 0 0% 4%;
   --popover-foreground: 0 0% 96%;
-  --primary: 358 78% 50%; /* #E31C25 */
-  --primary-foreground: 0 0% 100%;
+  --primary: 82 100% 62%; /* #B6FF3B */
+  --primary-foreground: 0 0% 0%;
   --secondary: 0 0% 10%;
   --secondary-foreground: 0 0% 96%;
   --muted: 0 0% 10%;
   --muted-foreground: 0 0% 63%;
   --accent: 0 0% 10%;
   --accent-foreground: 0 0% 96%;
-  --destructive: 0 63% 31%;
+  --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 96%;
   --border: 0 0% 15%;
   --input: 0 0% 15%;
-  --ring: 358 78% 50%;
+  --ring: 82 100% 62%;
   --radius: 0rem;
 }
 
@@ -52,7 +52,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #E31C25;
+  background: #B6FF3B;
 }
 
 @theme inline {

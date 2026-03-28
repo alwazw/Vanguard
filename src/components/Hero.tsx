@@ -4,6 +4,7 @@ import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { useRef, useState, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
+import NetworkTopology from './NetworkTopology'
 
 export default function Hero() {
   const container = useRef<HTMLDivElement>(null!)
@@ -32,7 +33,7 @@ export default function Hero() {
         x: -20,
         opacity: 0,
         duration: 0.8,
-        borderLeft: "0px solid #E31C25"
+        borderLeft: "0px solid #B6FF3B"
     }, "-=0.2")
     .from(ctaRef.current, {
         y: 10,
@@ -51,7 +52,7 @@ export default function Hero() {
         let iterations = 0
 
         const glitchInterval = setInterval(() => {
-            setGlitchText(prev =>
+            setGlitchText(() =>
                 original.split("").map((char, index) => {
                     if(index < iterations) return original[index]
                     return chars[Math.floor(Math.random() * chars.length)]
@@ -73,20 +74,19 @@ export default function Hero() {
         ref={container}
         className="relative h-screen flex flex-col items-start justify-center px-6 md:px-24 overflow-hidden bg-deep-black"
     >
-      {/* Background Video Placeholder with Tactical Overlay */}
-      <div className="absolute inset-0 z-0">
+      {/* Background Topology with Tactical Overlay */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <NetworkTopology />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#050505_100%)] z-10" />
         <div className="absolute inset-0 bg-deep-black/60 z-10" />
-        <div className="w-full h-full bg-[#111]">
-           <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none"
-                style={{backgroundImage: 'radial-gradient(#E31C25 0.5px, transparent 0.5px)', backgroundSize: '20px 20px'}} />
-        </div>
+        <div className="absolute top-0 left-0 w-full h-full opacity-10"
+                style={{backgroundImage: 'radial-gradient(#B6FF3B 0.5px, transparent 0.5px)', backgroundSize: '20px 20px'}} />
       </div>
 
       <div className="relative z-20 max-w-6xl w-full text-left">
         <div className="flex items-center gap-4 mb-4">
-            <span className="w-12 h-[1px] bg-tactical-red" />
-            <span className="text-tactical-red font-mono text-sm tracking-[0.3em] uppercase animate-pulse">System Online // Status: Red</span>
+            <span className="w-12 h-[1px] bg-neon-lime" />
+            <span className="text-neon-lime font-mono text-sm tracking-[0.3em] uppercase animate-pulse">System Online // Status: Active</span>
         </div>
 
         <h1
@@ -103,7 +103,7 @@ export default function Hero() {
           ))}
         </h1>
 
-        <div className="border-l-2 border-tactical-red pl-8 mb-12">
+        <div className="border-l-2 border-neon-lime pl-8 mb-12">
             <p
             ref={subtitleRef}
             className="text-base md:text-xl text-gray-400 max-w-2xl leading-relaxed uppercase tracking-wide font-mono"
@@ -116,7 +116,7 @@ export default function Hero() {
         </div>
 
         <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 md:gap-6">
-          <Button size="lg" className="bg-tactical-red text-white hover:bg-white hover:text-black px-8 md:px-12 py-6 md:py-8 text-lg md:text-xl font-bold uppercase tracking-widest border-none transition-all">
+          <Button size="lg" className="bg-neon-lime text-white hover:bg-white hover:text-black px-8 md:px-12 py-6 md:py-8 text-lg md:text-xl font-bold uppercase tracking-widest border-none transition-all">
             Deploy Now
           </Button>
           <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white hover:text-black px-8 md:px-12 py-6 md:py-8 text-lg md:text-xl font-bold uppercase tracking-widest transition-all">
@@ -126,14 +126,14 @@ export default function Hero() {
       </div>
 
       {/* Tactical Corner Accents */}
-      <div className="absolute top-12 right-12 text-tactical-red/30 font-mono text-xs text-right hidden md:block">
+      <div className="absolute top-12 right-12 text-neon-lime/30 font-mono text-xs text-right hidden md:block">
         COORD: 34.0522° N, 118.2437° W<br />
         SIGNAL: ENCRYPTED_AES_256<br />
         OPERATOR: VANGUARD_01
       </div>
 
       <div className="absolute bottom-12 left-12 w-64 h-1 bg-white/5 overflow-hidden hidden md:block">
-        <div className="w-1/3 h-full bg-tactical-red animate-[scan_3s_infinite_linear]" />
+        <div className="w-1/3 h-full bg-neon-lime animate-[scan_3s_infinite_linear]" />
       </div>
     </section>
   )

@@ -62,7 +62,7 @@ export default function AcademyList() {
     <section ref={containerRef} className="py-32 px-12 max-w-6xl mx-auto bg-deep-black">
       <div className="mb-24 flex flex-col md:flex-row items-end justify-between border-b border-white/5 pb-12">
         <div>
-            <span className="text-tactical-red font-mono text-sm tracking-[0.4em] uppercase mb-4 block animate-pulse">Training & Proficiency</span>
+            <span className="text-neon-lime font-mono text-sm tracking-[0.4em] uppercase mb-4 block animate-pulse">Training & Proficiency</span>
             <h2 className="text-5xl md:text-8xl font-black uppercase tracking-tighter text-white leading-none">VANGUARD_ACADEMY</h2>
         </div>
         <div className="text-right hidden md:block">
@@ -81,17 +81,17 @@ export default function AcademyList() {
               className="w-full py-10 flex items-center justify-between text-left group"
             >
               <div className="flex items-center gap-12">
-                <span className="text-tactical-red font-mono text-xl opacity-40 group-hover:opacity-100 transition-opacity">0{tier.id}</span>
+                <span className="text-neon-lime font-mono text-xl opacity-40 group-hover:opacity-100 transition-opacity">0{tier.id}</span>
                 <div>
                     <span className="text-gray-500 text-xs font-mono font-bold uppercase tracking-[0.3em] block mb-3 group-hover:text-white transition-colors">
                     {tier.focus}
                     </span>
-                    <h3 className="text-3xl md:text-5xl font-black uppercase tracking-tight group-hover:text-tactical-red transition-all duration-300">
+                    <h3 className="text-3xl md:text-5xl font-black uppercase tracking-tight group-hover:text-neon-lime transition-all duration-300">
                     {tier.name}
                     </h3>
                 </div>
               </div>
-              <div className={`w-12 h-12 flex items-center justify-center border border-white/10 text-3xl transition-all duration-500 ${activeTier === tier.id ? 'rotate-45 bg-tactical-red border-tactical-red text-white' : 'group-hover:border-tactical-red group-hover:text-tactical-red text-gray-500'}`}>
+              <div className={`w-12 h-12 flex items-center justify-center border border-white/10 text-3xl transition-all duration-500 ${activeTier === tier.id ? 'rotate-45 bg-neon-lime border-neon-lime text-white' : 'group-hover:border-neon-lime group-hover:text-neon-lime text-gray-500'}`}>
                 +
               </div>
             </button>
@@ -101,20 +101,20 @@ export default function AcademyList() {
                 activeTier === tier.id ? 'max-h-[800px] opacity-100 py-12' : 'max-h-0 opacity-0'
               }`}
             >
-              <div className="grid md:grid-cols-3 gap-16 px-8 border-l-2 border-tactical-red ml-6">
+              <div className="grid md:grid-cols-3 gap-16 px-8 border-l-2 border-neon-lime ml-6">
                 <div className="md:col-span-2">
                   <p className="text-gray-400 font-mono text-lg leading-relaxed mb-10 uppercase tracking-wide">{tier.details}</p>
-                  <Button size="lg" className="bg-tactical-red text-white hover:bg-white hover:text-black px-10 py-6 text-sm font-bold uppercase tracking-widest transition-all">
+                  <Button size="lg" className="bg-neon-lime text-white hover:bg-white hover:text-black px-10 py-6 text-sm font-bold uppercase tracking-widest transition-all">
                     Enroll in {tier.name.split(':')[0]}
                   </Button>
                 </div>
                 <div className="bg-[#0c0c0c] p-10 border border-white/5 relative">
-                    <div className="absolute top-0 left-0 w-4 h-4 border-t border-l border-tactical-red/50" />
-                    <h4 className="text-[10px] font-mono font-bold uppercase text-tactical-red mb-6 tracking-[0.3em]">PROFILING_REQUIRED_SKILLS</h4>
+                    <div className="absolute top-0 left-0 w-4 h-4 border-t border-l border-neon-lime/50" />
+                    <h4 className="text-[10px] font-mono font-bold uppercase text-neon-lime mb-6 tracking-[0.3em]">PROFILING_REQUIRED_SKILLS</h4>
                     <ul className="space-y-4">
                         {tier.skills.map(skill => (
                             <li key={skill} className="flex items-center gap-4 text-gray-500 font-mono text-sm uppercase tracking-widest">
-                                <div className="w-1.5 h-1.5 bg-tactical-red/40" />
+                                <div className="w-1.5 h-1.5 bg-neon-lime/40" />
                                 {skill}
                             </li>
                         ))}
