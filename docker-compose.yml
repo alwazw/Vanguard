@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  vanguard-app:
+    container_name: vanguard-protocol
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "${PORT:-3000}:3000"
+    environment:
+      - NODE_ENV=production
+      - NEXT_TELEMETRY_DISABLED=1
+      - PORT=3000
+    env_file:
+      - .env
+    networks:
+      - vanguard_network
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    volumes:
+      # Use for production output if needed or persistent logs
+      - ./logs:/app/logs
+      # Bind public if assets need dynamic updating without rebuild
+      - ./public:/app/public
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+networks:
+  vanguard_network:
+    driver: bridge
+    name: vanguard_network
+
+# Note: Using secrets for sensitive keys in production
+# secrets:
+#   vanguard_api_key:
+#     file: ./secrets/vanguard_api_key.txt

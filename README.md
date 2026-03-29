@@ -41,9 +41,22 @@ npm run dev
 ```
 Open [http://localhost:3000](http://localhost:3000) to view the application.
 
-### 2. Docker Installation (Containerized)
+### 2. Docker & Docker Compose Installation
 **Prerequisites:** Docker and Docker Compose installed.
 
+```bash
+# Step 1: Copy the example environment file
+cp .env.example .env
+
+# Step 2: Build and run using Docker Compose
+docker compose up --build -d
+```
+- The application will be available at [http://localhost:3000](http://localhost:3000).
+- **Healthchecks:** Docker Compose monitors the application health via a dedicated endpoint.
+- **Volumes:** Persists logs to `./logs` and mounts `public/` for live asset updates.
+- **Networks:** Isolated `vanguard_network` for secure container communication.
+
+#### Manual Docker Build (Optional)
 ```bash
 # Build the Docker image
 docker build -t vanguard-protocol .
@@ -51,7 +64,6 @@ docker build -t vanguard-protocol .
 # Run the container
 docker run -p 3000:3000 vanguard-protocol
 ```
-The application will be available at [http://localhost:3000](http://localhost:3000).
 
 ## 🏗 PROJECT STRUCTURE
 - `src/app/`: Next.js App Router pages and global styles.
