@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import NetworkTopology from "@/components/NetworkTopology";
 import ThreatLandscape from "@/components/ThreatLandscape";
+import ThreatGlobe from "@/components/ThreatGlobe";
 import CoreServices from "@/components/CoreServices";
 import TacticalOperations from "@/components/TacticalOperations";
 import ModernArsenal from "@/components/ModernArsenal";
@@ -12,6 +13,7 @@ export default function Home() {
     <main className="min-h-screen bg-noir-dark">
       <NetworkTopology />
       <Hero />
+      <ThreatGlobe />
       <ThreatLandscape />
       <CoreServices />
       <TacticalOperations />
