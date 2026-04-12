@@ -102,7 +102,8 @@ export default function Hero() {
       <div className="absolute bottom-6 md:bottom-8 right-6 md:right-8 w-8 md:w-12 h-8 md:h-12 border-r-2 border-b-2 border-vanguard-orange/60 z-10"></div>
       
       <div className="max-w-7xl w-full text-center z-10">
-        <div ref={badgeRef} className="inline-block px-4 py-2 border border-vanguard-orange/40 bg-vanguard-orange/5 backdrop-blur-sm mb-6">
+        <div ref={badgeRef} className="inline-flex items-center gap-3 px-4 py-2 border border-vanguard-orange/40 bg-vanguard-orange/5 backdrop-blur-sm mb-6 cyber-border">
+          <span className="w-2 h-2 rounded-full bg-vanguard-orange status-pulse" aria-hidden="true"></span>
           <span className="text-vanguard-orange text-[10px] md:text-xs font-mono uppercase tracking-widest">// STATUS: ENCRYPTED // CLEARANCE: C-SUITE</span>
         </div>
         <h1
@@ -123,10 +124,10 @@ export default function Hero() {
           Converging advanced penetration testing, AI-driven red teaming, and elite training.
         </p>
         <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 justify-center px-4">
-          <button className="px-6 md:px-8 py-3 md:py-4 bg-vanguard-orange text-white font-bold uppercase tracking-widest text-xs md:text-sm hover:bg-vanguard-amber transition-colors glow-orange">
+          <button className="relative px-6 md:px-8 py-3 md:py-4 bg-vanguard-orange text-white font-bold uppercase tracking-widest text-xs md:text-sm hover:bg-vanguard-amber transition-colors glow-orange pulse-ring focus:outline-none focus-visible:ring-2 focus-visible:ring-vanguard-amber focus-visible:ring-offset-2 focus-visible:ring-offset-noir-dark">
             Initiate Protocol
           </button>
-          <button className="px-6 md:px-8 py-3 md:py-4 border border-slate-500 text-white font-bold uppercase tracking-widest text-xs md:text-sm hover:border-vanguard-orange hover:text-vanguard-orange transition-all">
+          <button className="px-6 md:px-8 py-3 md:py-4 border border-slate-500 text-white font-bold uppercase tracking-widest text-xs md:text-sm hover:border-vanguard-orange hover:text-vanguard-orange transition-all glass-card focus:outline-none focus-visible:ring-2 focus-visible:ring-vanguard-orange focus-visible:ring-offset-2 focus-visible:ring-offset-noir-dark">
             View Services
           </button>
         </div>

@@ -150,3 +150,204 @@ body {
   background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.5), transparent);
   animation: scanline 8s linear infinite;
 }
+
+/* ========================================
+   MODERN VISUAL ENHANCEMENTS
+   ======================================== */
+
+/* Shimmer loading effect */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 107, 53, 0) 0%,
+    rgba(255, 107, 53, 0.1) 50%,
+    rgba(255, 107, 53, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+/* Radar sweep effect for tactical UI elements */
+@keyframes radar-sweep {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.radar-sweep::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    rgba(255, 107, 53, 0.3) 30deg,
+    transparent 60deg
+  );
+  animation: radar-sweep 4s linear infinite;
+}
+
+/* Glitch text effect */
+@keyframes glitch {
+  0%, 90%, 100% { transform: translate(0); }
+  92% { transform: translate(-2px, 2px); }
+  94% { transform: translate(2px, -2px); }
+  96% { transform: translate(-2px, -2px); }
+  98% { transform: translate(2px, 2px); }
+}
+
+.glitch-text {
+  position: relative;
+}
+
+.glitch-text:hover {
+  animation: glitch 0.3s ease-in-out;
+}
+
+/* Pulse ring effect for CTAs */
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 0.5; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+.pulse-ring {
+  position: relative;
+}
+
+.pulse-ring::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border: 2px solid var(--vanguard-orange);
+  border-radius: inherit;
+  animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Data stream background effect */
+@keyframes data-stream {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 0% 100%; }
+}
+
+.data-stream-bg {
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(255, 107, 53, 0.03) 2px,
+    rgba(255, 107, 53, 0.03) 4px
+  );
+  background-size: 100% 100px;
+  animation: data-stream 20s linear infinite;
+}
+
+/* Cyber border with animated corners */
+.cyber-border {
+  position: relative;
+  border: 1px solid rgba(255, 107, 53, 0.2);
+}
+
+.cyber-border::before,
+.cyber-border::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--vanguard-orange);
+}
+
+.cyber-border::before {
+  top: -2px;
+  left: -2px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.cyber-border::after {
+  bottom: -2px;
+  right: -2px;
+  border-left: none;
+  border-top: none;
+}
+
+/* Floating animation for subtle movement */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Typewriter cursor effect */
+@keyframes blink-cursor {
+  0%, 50% { border-color: var(--vanguard-orange); }
+  51%, 100% { border-color: transparent; }
+}
+
+.typewriter-cursor {
+  border-right: 2px solid var(--vanguard-orange);
+  animation: blink-cursor 1s step-end infinite;
+}
+
+/* Status indicator pulse */
+@keyframes status-pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.7); }
+  50% { opacity: 0.8; box-shadow: 0 0 0 8px rgba(255, 107, 53, 0); }
+}
+
+.status-pulse {
+  animation: status-pulse 2s ease-in-out infinite;
+}
+
+/* Glass morphism card effect */
+.glass-card {
+  background: rgba(16, 16, 26, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 107, 53, 0.1);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.glass-card:hover {
+  background: rgba(16, 16, 26, 0.6);
+  border-color: rgba(255, 107, 53, 0.25);
+  box-shadow: 
+    0 16px 48px rgba(0, 0, 0, 0.4),
+    0 0 40px rgba(255, 107, 53, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* Accessibility: Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus styles for accessibility */
+:focus-visible {
+  outline: 2px solid var(--vanguard-orange);
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .card-noir,
+  .glass-card {
+    border-width: 2px;
+    border-color: var(--vanguard-orange);
+  }
+}

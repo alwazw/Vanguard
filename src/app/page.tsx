@@ -10,14 +10,23 @@ import ROISection from "@/components/ROISection";
 export default function Home() {
   return (
     <main className="min-h-screen bg-noir-dark">
+      {/* Skip link for accessibility */}
+      <a 
+        href="#main-content" 
+        className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:top-4 focus:left-4 focus:px-4 focus:py-2 focus:bg-vanguard-orange focus:text-white focus:font-bold"
+      >
+        Skip to main content
+      </a>
       <NetworkTopology />
       <Hero />
+      <div id="main-content">
       <ThreatLandscape />
       <CoreServices />
       <TacticalOperations />
       <ModernArsenal />
       <DeploymentTiers />
       <ROISection />
+      </div>
 
       {/* Final CTA */}
       <section className="py-10 md:py-16 px-4 md:px-6 bg-gradient-to-br from-vanguard-orange to-vanguard-amber text-white text-center relative overflow-hidden">
