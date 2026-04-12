@@ -54,7 +54,7 @@ export default function Home() {
             </div>
           </div>
           <div className="mt-6 pt-6 border-t border-slate-800 text-center text-slate-600 text-[10px] md:text-xs uppercase tracking-widest">
-            © 2025 The Vanguard Protocol. All Rights Reserved.
+            © 2026 The Vanguard Protocol. All Rights Reserved.
           </div>
         </div>
       </footer>
