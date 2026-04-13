@@ -70,7 +70,7 @@ export default function DeploymentTiers() {
   return (
     <section ref={containerRef} className="py-8 md:py-20 px-4 md:px-6 circuit-pattern relative">
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center mb-8 md:mb-12">
+        <div className="text-center mb-5 md:mb-12">
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="h-px w-8 md:w-16 accent-line"></div>
             <span className="text-vanguard-orange text-xs font-mono uppercase tracking-widest">Engagement Models</span>
@@ -84,7 +84,7 @@ export default function DeploymentTiers() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
           {tiers.map((tier) => (
             <div 
               key={tier.id}
@@ -132,9 +132,9 @@ export default function DeploymentTiers() {
         </div>
 
         {/* Boutique Advantage */}
-        <div className="mt-8 md:mt-12 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-          <div className="p-6 md:p-8 border border-slate-700/50 bg-noir-dark/60 backdrop-blur-sm">
-            <h3 className="text-lg md:text-xl font-bold mb-4 text-vanguard-amber">The Big 4 Legacy</h3>
+        <div className="mt-4 md:mt-12 grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6">
+          <div className="p-4 md:p-8 border border-slate-700/50 bg-noir-dark/60 backdrop-blur-sm">
+            <h3 className="text-base md:text-xl font-bold mb-3 md:mb-4 text-vanguard-amber">The Big 4 Legacy</h3>
             <ul className="space-y-3">
               {['Layered, pyramid junior staffing', 'Structured, rigid program management', 'Static automated scanners', 'Scale and compliance focus'].map((item) => (
                 <li key={item} className="flex items-start gap-3">
@@ -144,8 +144,8 @@ export default function DeploymentTiers() {
               ))}
             </ul>
           </div>
-          <div className="p-6 md:p-8 border border-vanguard-orange/40 bg-vanguard-orange/10 backdrop-blur-sm">
-            <h3 className="text-lg md:text-xl font-bold mb-4 text-vanguard-orange">The Vanguard Approach</h3>
+          <div className="p-4 md:p-8 border border-vanguard-orange/40 bg-vanguard-orange/10 backdrop-blur-sm">
+            <h3 className="text-base md:text-xl font-bold mb-3 md:mb-4 text-vanguard-orange">The Vanguard Approach</h3>
             <ul className="space-y-3">
               {['Senior-led, direct access', 'Real-time Time-to-Insight', 'Agentic AI & Edge Robotics', 'Strategic depth & risk mitigation'].map((item) => (
                 <li key={item} className="flex items-start gap-3">

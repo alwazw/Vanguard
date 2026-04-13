@@ -55,9 +55,9 @@ export default function ModernArsenal() {
   return (
     <section ref={containerRef} className="py-8 md:py-20 px-4 md:px-6 motherboard-bg relative">
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-12 items-center">
           {/* Image */}
-          <div className="relative aspect-[4/3] md:aspect-auto md:h-96 lg:h-[500px] order-2 lg:order-1 border border-vanguard-orange/20">
+          <div className="relative aspect-video md:aspect-auto md:h-96 lg:h-[500px] order-2 lg:order-1 border border-vanguard-orange/20">
             <div className="absolute top-3 left-3 w-6 h-6 border-l border-t border-vanguard-orange/50 z-10"></div>
             <div className="absolute top-3 right-3 w-6 h-6 border-r border-t border-vanguard-orange/50 z-10"></div>
             <div className="absolute bottom-3 left-3 w-6 h-6 border-l border-b border-vanguard-orange/50 z-10"></div>
@@ -80,7 +80,7 @@ export default function ModernArsenal() {
             <h2 className="text-3xl md:text-5xl font-bold uppercase mb-4 tracking-tighter">
               The Modern <span className="text-vanguard-orange">Arsenal</span>
             </h2>
-            <p className="text-slate-400 text-sm md:text-base mb-8 leading-relaxed">
+            <p className="text-slate-400 text-sm md:text-base mb-4 md:mb-8 leading-relaxed">
               Specialized penetration testing hardware demonstrates the fragility of modern 
               access controls and hardware interfaces that most organizations overlook.
             </p>

@@ -77,7 +77,7 @@ export default function ThreatLandscape() {
   return (
     <section ref={containerRef} className="py-8 md:py-20 px-4 md:px-6 hex-grid relative overflow-hidden">
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center mb-6 md:mb-10">
+        <div className="text-center mb-4 md:mb-10">
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="h-px w-8 md:w-16 accent-line"></div>
             <span className="text-vanguard-orange text-xs font-mono uppercase tracking-widest">Multi-Domain Framework</span>
@@ -93,7 +93,7 @@ export default function ThreatLandscape() {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-6 mb-6 md:mb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-6 mb-4 md:mb-10">
           {stats.map((stat) => (
             <div key={stat.label} className="stat-item text-center p-3 md:p-6 border border-vanguard-orange/20 bg-noir-medium/40 backdrop-blur-sm">
               <div className="text-xl sm:text-2xl md:text-5xl font-black text-vanguard-orange text-glow mb-1 md:mb-2">{stat.value}</div>

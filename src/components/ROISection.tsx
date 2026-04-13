@@ -54,7 +54,7 @@ export default function ROISection() {
   return (
     <section ref={containerRef} className="py-8 md:py-20 px-4 md:px-6 hex-grid relative overflow-hidden">
       <div className="max-w-6xl mx-auto relative z-10">
-        <div className="text-center mb-8 md:mb-12">
+        <div className="text-center mb-5 md:mb-12">
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="h-px w-8 md:w-16 accent-line"></div>
             <span className="text-vanguard-orange text-xs font-mono uppercase tracking-widest">Financial Analysis</span>
@@ -65,13 +65,13 @@ export default function ROISection() {
           </h2>
         </div>
 
-        <div className="roi-content grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        <div className="roi-content grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
           {/* Cost of Inaction */}
-          <div className="p-6 md:p-10 border border-vanguard-orange/40 bg-vanguard-orange/10 backdrop-blur-sm relative overflow-hidden">
+          <div className="p-4 md:p-10 border border-vanguard-orange/40 bg-vanguard-orange/10 backdrop-blur-sm relative overflow-hidden">
             <div className="absolute top-0 right-0 w-32 h-32 bg-vanguard-orange/20 blur-3xl"></div>
-            <h3 className="text-lg md:text-xl font-bold mb-6 text-vanguard-orange relative z-10">The Cost of Inaction</h3>
+            <h3 className="text-base md:text-xl font-bold mb-4 md:mb-6 text-vanguard-orange relative z-10">The Cost of Inaction</h3>
             
-            <div className="relative z-10 mb-8">
+            <div className="relative z-10 mb-4 md:mb-8">
               <div className="text-5xl md:text-7xl font-black text-vanguard-orange">
                 ${impactValue}M
               </div>
@@ -97,11 +97,11 @@ export default function ROISection() {
           </div>
 
           {/* Cost of Defense */}
-          <div className="p-6 md:p-10 border border-slate-700/50 bg-noir-dark/60 backdrop-blur-sm relative overflow-hidden">
+          <div className="p-4 md:p-10 border border-slate-700/50 bg-noir-dark/60 backdrop-blur-sm relative overflow-hidden">
             <div className="absolute top-0 right-0 w-32 h-32 bg-vanguard-gold/10 blur-3xl"></div>
-            <h3 className="text-lg md:text-xl font-bold mb-6 text-vanguard-gold relative z-10">The Cost of Defense</h3>
+            <h3 className="text-base md:text-xl font-bold mb-4 md:mb-6 text-vanguard-gold relative z-10">The Cost of Defense</h3>
             
-            <div className="relative z-10 mb-8">
+            <div className="relative z-10 mb-4 md:mb-8">
               <div className="text-3xl md:text-4xl font-black text-white">
                 Fractional Annual Investment
               </div>
