@@ -53,11 +53,11 @@ export default function ModernArsenal() {
   }, { scope: containerRef })
 
   return (
-    <section ref={containerRef} className="py-10 md:py-20 px-4 md:px-6 motherboard-bg relative">
+    <section ref={containerRef} className="py-8 md:py-20 px-4 md:px-6 motherboard-bg relative">
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Image */}
-          <div className="relative h-64 md:h-96 lg:h-[500px] order-2 lg:order-1 border border-vanguard-orange/20">
+          <div className="relative aspect-[4/3] md:aspect-auto md:h-96 lg:h-[500px] order-2 lg:order-1 border border-vanguard-orange/20">
             <div className="absolute top-3 left-3 w-6 h-6 border-l border-t border-vanguard-orange/50 z-10"></div>
             <div className="absolute top-3 right-3 w-6 h-6 border-r border-t border-vanguard-orange/50 z-10"></div>
             <div className="absolute bottom-3 left-3 w-6 h-6 border-l border-b border-vanguard-orange/50 z-10"></div>

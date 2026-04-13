@@ -64,7 +64,7 @@ export default function TacticalOperations() {
   }, { scope: containerRef })
 
   return (
-    <section ref={containerRef} className="py-10 md:py-20 px-4 md:px-6 relative bg-noir-medium/30">
+    <section ref={containerRef} className="py-8 md:py-20 px-4 md:px-6 relative bg-noir-medium/30">
       <div className="max-w-7xl mx-auto mb-8 md:mb-12">
         <div className="flex items-center gap-4 mb-4">
           <div className="h-px flex-1 max-w-[100px] accent-line"></div>
@@ -124,7 +124,7 @@ export default function TacticalOperations() {
           ))}
         </div>
 
-        <div className="relative h-[250px] md:h-[400px] w-full bg-noir-medium/40 border border-vanguard-orange/20 backdrop-blur-sm overflow-hidden">
+        <div className="relative aspect-[4/3] md:aspect-auto md:h-[400px] w-full bg-noir-medium/40 border border-vanguard-orange/20 backdrop-blur-sm overflow-hidden">
           <div className="absolute top-4 left-4 w-6 h-6 border-l border-t border-vanguard-orange/50 z-10"></div>
           <div className="absolute top-4 right-4 w-6 h-6 border-r border-t border-vanguard-orange/50 z-10"></div>
           <div className="absolute bottom-4 left-4 w-6 h-6 border-l border-b border-vanguard-orange/50 z-10"></div>

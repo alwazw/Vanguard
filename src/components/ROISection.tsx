@@ -52,7 +52,7 @@ export default function ROISection() {
   }, [inView])
 
   return (
-    <section ref={containerRef} className="py-10 md:py-20 px-4 md:px-6 hex-grid relative overflow-hidden">
+    <section ref={containerRef} className="py-8 md:py-20 px-4 md:px-6 hex-grid relative overflow-hidden">
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-8 md:mb-12">
           <div className="flex items-center justify-center gap-4 mb-4">
@@ -130,20 +130,25 @@ export default function ROISection() {
 
         {/* Visual Comparison Bar */}
         <div className="mt-6 md:mt-10 p-4 md:p-6 border border-slate-700/50 bg-noir-dark/60 backdrop-blur-sm">
-          <div className="flex flex-col md:flex-row items-center gap-6">
-            <div className="flex-1 w-full">
-              <div className="text-xs text-slate-500 uppercase tracking-wider mb-2">Potential Breach Impact</div>
-              <div className="h-8 bg-vanguard-orange/20 border border-vanguard-orange/30 relative overflow-hidden">
+          <div className="flex flex-col gap-4 md:gap-6">
+            <div className="w-full">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-xs text-slate-500 uppercase tracking-wider">Potential Breach Impact</span>
+                <span className="text-xs font-bold text-vanguard-orange md:hidden">$29M</span>
+              </div>
+              <div className="h-6 md:h-8 bg-vanguard-orange/20 border border-vanguard-orange/30 relative overflow-hidden">
                 <div className="absolute inset-0 bg-vanguard-orange" style={{ width: '100%' }}></div>
-                <span className="absolute right-2 top-1/2 -translate-y-1/2 text-xs font-bold text-white">$29M</span>
+                <span className="absolute right-2 top-1/2 -translate-y-1/2 text-xs font-bold text-white hidden md:block">$29M</span>
               </div>
             </div>
-            <div className="text-2xl font-black text-slate-600">VS</div>
-            <div className="flex-1 w-full">
-              <div className="text-xs text-slate-500 uppercase tracking-wider mb-2">Annual Defense Investment</div>
-              <div className="h-8 bg-vanguard-gold/20 border border-vanguard-gold/30 relative overflow-hidden">
+            <div className="w-full">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-xs text-slate-500 uppercase tracking-wider">Annual Defense Investment</span>
+                <span className="text-xs font-bold text-vanguard-gold md:hidden">~$100k</span>
+              </div>
+              <div className="h-6 md:h-8 bg-vanguard-gold/20 border border-vanguard-gold/30 relative overflow-hidden">
                 <div className="absolute inset-0 bg-vanguard-gold" style={{ width: '3%' }}></div>
-                <span className="absolute left-2 top-1/2 -translate-y-1/2 text-xs font-bold text-deep-black">~$100k</span>
+                <span className="absolute left-2 top-1/2 -translate-y-1/2 text-xs font-bold text-deep-black hidden md:block">~$100k</span>
               </div>
             </div>
           </div>

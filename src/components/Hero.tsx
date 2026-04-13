@@ -75,7 +75,7 @@ export default function Hero() {
   return (
     <section
         ref={container}
-        className="relative min-h-[100svh] flex flex-col items-center justify-center px-4 md:px-6 py-12 md:py-0 overflow-hidden"
+        className="relative min-h-[85svh] md:min-h-[100svh] flex flex-col items-center justify-center px-4 md:px-6 py-8 md:py-0 overflow-hidden"
     >
       {/* Video Background - Client Only */}
       {isMounted ? (
